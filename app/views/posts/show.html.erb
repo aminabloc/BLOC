@@ -20,9 +20,9 @@
 		<%= @post.body %>
 	</p>
 
-  <% if @post.image? %>
+	<p class="image">
 		<%= image_tag @post.image.url %>
-  <% end %>
+	</p>
 
 	<div id="comments">
 		<h2><%= @post.comments.count %> Comments </h2>
