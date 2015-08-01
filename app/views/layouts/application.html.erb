@@ -38,12 +38,11 @@
 
 	<div id="main_content">
 		<div id="header">
-			<p>All Posts</p>
+        <h4><p style="font-size: 24px"><%= link_to "All Posts", root_path %></p>
 			<% if user_signed_in? %>
-				<div class="buttons">
-					<button class="button"><%= link_to "New Post", new_post_path %></button>
-					<button class="button"><%= link_to "Inbox", mailbox_inbox_path %></button>
-				</div>
+        <button class="button" style="float: right"><%= link_to "New Post", new_post_path %></button>
+        <button class="button" style="float: right"><%= link_to "Inbox", mailbox_inbox_path %></button>
+    </h4>
 			<% else %>
 				<div class="buttons">
             		<button class="active"><%= link_to "Login", new_user_session_path %></button>

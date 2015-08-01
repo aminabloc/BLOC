@@ -1,7 +1,11 @@
 class PostsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
 	def index
-		@posts = Post.all.order('created_at DESC')
+    if params[:hashtag]
+      @posts = Post.tagged_with(params[:hashtag])
+    else
+      @posts = Post.all.order('created_at DESC')
+    end
 	end
 
 	def new
@@ -13,6 +17,8 @@ class PostsController < ApplicationController
 		
 		if @post.save
 			redirect_to @post 
+      tags = @post.body.scan( SimpleHashtag::Hashtag::HASHTAG_REGEX )
+      @post.update_attribute(:tag_list, tags)
 		else
 			render 'new'
 		end
@@ -29,12 +35,15 @@ class PostsController < ApplicationController
 	def update
 		@post = Post.find(params[:id])
 
-		if @post.update(params[:post].permit(:title, :image, :body))
+		if @post.update(params[:post].permit(:title, :image, :body, :tag_list))
+      tags = @post.body.scan(/\B#\w+/)
+      @post.update_attribute(:tag_list, tags)
 			redirect_to @post
 		else
 			render 'edit'
 		end
 	end
+
 
 	def destroy
 		@post = Post.find(params[:id])
@@ -46,6 +55,6 @@ class PostsController < ApplicationController
 	private
 
 	def post_params
-		params.require(:post).permit(:title, :image, :body)
+		params.require(:post).permit(:title, :image, :body, :tag_list)
 	end
 end

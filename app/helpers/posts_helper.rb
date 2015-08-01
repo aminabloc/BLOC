@@ -1,4 +1,5 @@
 module PostsHelper
+  include ActsAsTaggableOn::TagsHelper
   def render_with_hashtags(content)
   	content_words = content.split(" ")
     content_with_links = content_words.map do |word| 

@@ -17,7 +17,7 @@
 	</p>
 
 	<p class="body">
-		<%= @post.body %>
+  <%= linkify_hashtags(@post.body) %>
 	</p>
 
   <%= image_tag @post.image.url(:medium) %>
