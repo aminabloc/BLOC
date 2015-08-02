@@ -1,6 +1,6 @@
 class ConversationsController < ApplicationController
 	before_action :authenticate_user!
-	before_action :get_mailbox
+
 
   def new
   end
