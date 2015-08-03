@@ -1,10 +1,14 @@
 class PostsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
 	def index
-    if params[:hashtag]
-      @posts = Post.tagged_with(params[:hashtag]).order('created_at DESC')
+    unless user_signed_in?
+      redirect_to new_user_session_path
     else
-      @posts = Post.all.order('created_at DESC')
+      if params[:hashtag]
+        @posts = Post.tagged_with(params[:hashtag]).order('created_at DESC')
+      else
+        @posts = Post.all.order('created_at DESC')
+      end
     end
 	end
 
