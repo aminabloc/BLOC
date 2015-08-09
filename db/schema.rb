@@ -26,11 +26,6 @@ ActiveRecord::Schema.define(version: 20150801054432) do
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id"
 
-  create_table "hashtags", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
     t.integer "unsubscriber_id"
     t.string  "unsubscriber_type"
@@ -97,23 +92,6 @@ ActiveRecord::Schema.define(version: 20150801054432) do
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
-
-  create_table "simple_hashtag_hashtaggings", force: :cascade do |t|
-    t.integer "hashtag_id"
-    t.integer "hashtaggable_id"
-    t.string  "hashtaggable_type"
-  end
-
-  add_index "simple_hashtag_hashtaggings", ["hashtag_id"], name: "index_simple_hashtag_hashtaggings_on_hashtag_id"
-  add_index "simple_hashtag_hashtaggings", ["hashtaggable_id", "hashtaggable_type"], name: "index_hashtaggings_hashtaggable_id_hashtaggable_type"
-
-  create_table "simple_hashtag_hashtags", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "simple_hashtag_hashtags", ["name"], name: "index_simple_hashtag_hashtags_on_name"
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"

@@ -15,18 +15,28 @@
  */
 
  @import 'normalize';
+ @import "bootstrap-sprockets";
+@import "bootstrap";
+@import "new";
+@import "jquery-ui";
+@import "style";
+@import "font-awesome";
+@import "navigation";
+@import "ionicons";
 
  html, body {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Actor', sans-serif;
+
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 500;
+	text-transform: uppercase;
 }
 
 a {
 	text-decoration: none;
-	color: inherit;
+	color: grey;
 }
 
 #sidebar {
@@ -34,8 +44,9 @@ a {
 	position: fixed;
 	left: 0;
 	top: 0;
+	text-transform: uppercase;
 	height: 100%;
-	background: #f5f7f9;
+	background: #000000;
 	padding: 7em 0 0 0;
 	border-right: 1px solid #d6dce0;
 	#logo {
@@ -50,14 +61,15 @@ a {
 		padding-right: 3em;
 		.category {
 			font-weight: 700;
-			font-size: 0.7em;
+			font-size: 0.9em;
 			text-transform: uppercase;
-			color: #33acb7;
+			color: #D4AF37;
 		}
 		li {
 			padding: .5em 0;
 			a {
-				color: #9eafba;
+				font-size: .7em;
+				color: white;
 				text-decoration: none;
 				transition: all .4s ease;
 				&:hover {
@@ -82,15 +94,17 @@ a {
 
 .button {
 	outline: none;
-	background: transparent;
-	border: 1px solid #d6dce0;
-	padding: .5em 1.5em;
+	background: white;
+	border: 0px solid #D4AF37;
+	padding: .2em .8em;
 	border-radius: 1.5em;
 	&:hover {
-		border: 1px solid #33acb7;
-		color: #33acb7;
+		border: 0px solid #D4AF37;
+			font-weight: 100;
+			font-weight: 100;
+		color: #D4AF37;
 		a {
-			color: #33acb7 !important;
+			color: #D4AF37 !important;
 		}
 	}
 }
@@ -106,15 +120,15 @@ a {
 #main_content {
 	margin-left: 250px;
 	#header {
-		padding: 1em 3em;
-		border-bottom: 1px solid #d6dce0;
-		background: #f5f7f9;
-		color: #9eafba;
+		padding: 1.5em 2em;
+		border-bottom: 0px solid #D4AF37;
+		background: white;
+		color: black;
 		p {
 			display: inline;
 		}
 		a {
-			color: #9eafba;
+			color: #black;
 			text-decoration: none;
 		}
 		.buttons {
@@ -135,9 +149,9 @@ a {
 				font-weight: 500;
 				text-decoration: none;
 				color: #2a2f35;
-				font-size: 1.5em;
+				font-size: 1em;
 				&:hover {
-					color: #33acb7;
+					color: grey;
 				}
 			}
 		}
@@ -149,16 +163,18 @@ a {
 	#post_content {
 		padding: 1em 3em;
 		.title {
-			font-weight: 500;
+			font-weight: 100;
 			text-decoration: none;
 			color: #2a2f35;
-			font-size: 2.5em;
+			font-size: 2 em;
 			margin-bottom: 0;
 		}
 		.body {
-			font-size: 1.1em;
-			line-height: 1.75;
+			font-size: .3em;
+			line-height: .5;
+			text-transform: none;
 		}
+
 		.date_and_author {
 			color: #9eafba;
 			margin: .5em 0 2em 0;
@@ -170,7 +186,7 @@ a {
 				padding-bottom: 0.5em;
 			}
 			h3 {
-				margin-top: 2em;
+				margin-top: 1.5em;
 			}
 			.comment {
 				border-bottom: 1px solid #d6dce0;
@@ -209,7 +225,7 @@ a {
 	#page_wrapper {
 		padding: 3em;
 		#profile_image {
-			width: 300px;
+			width: 100px;
 			float: left;
 			margin-right: 2em;
 			img {
@@ -219,7 +235,7 @@ a {
 		}
 		#content {
 			h1 {
-				font-weight: 500;
+				font-weight: 300;
 			}
 			p {
 				font-size: 1.1em;
@@ -252,14 +268,35 @@ a {
 	input[type="submit"] {
 		outline: none;
 		background: transparent;
-		border: 1px solid #d6dce0;
+		border: 1px solid #D4AF37;
 		padding: .5em 1.5em;
 		font-size: 1.1em;
 		border-radius: 1.5em;
 		margin-left: .5em;
 		&:hover {
-			border: 1px solid #33acb7;
-			color: #33acb7;
+			border: 1px solid #D4AF37;
+			color: #D4AF37;
 		}
 	}
 }
+
+#header-image {
+	width: 100%;
+	height: auto;
+}
+
+
+table{
+	width: 50em;
+}
+
+td {
+	width: 20em;
+	height: 20em;
+}
+
+.user{
+	color:#CC9900;
+}
+
+

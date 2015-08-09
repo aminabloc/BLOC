@@ -3,17 +3,59 @@
 <head>
   <title>BLOC</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
+  <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Actor:400,700' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
+
 <body>
+   
+
+   
+               
+
+
+
+
+	<!-- Intro Section -->
+        <section class="inner-intro bg-img2 overlay-light parallax parallax-background2">
+            <div class="container" id="background-img">
+                <div class="row title">
+                    <h2 class="h2">Black Collegiate Excellence</h2>
+                    <div class="page-breadcrumb">
+                        <a>Home</a>/<a href="content.html">Content</a>/<span>Inbox</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="clearfix"></div>
+        <!-- End Intro Section -->
+
+
+
+
+        
+          
+        <!-- END FOOTER -->
+
+        <!-- Scroll Top -->
+        <a class="scroll-top">
+            <i class="fa fa-angle-double-up"></i>
+        </a>
+        <!-- End Scroll Top -->
+
+    </div>
+
 	<div id="sidebar">
+		<div "side-menu cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right">
 		<ul>
+			<li class="bloc" style="color:white; font-size: 1.5em; padding: 1em 0em"> BLOC </li>
 			<li class="category">Websites</li>
 			<li><%= link_to "Bloc", root_path %></li>
 			<li><%= link_to "About", about_path %></li>
 		</ul>
+
 
 		<ul>
 			<li class="category">Social</li>
@@ -27,21 +69,38 @@
 			<p class="sign_in">Admin Login</p>
 		<% end %>
 	</div>
+</div>
+
+
 
 	<div id="main_content">
-		<div id="header">
-        <h4><p style="font-size: 24px"><%= link_to "All Posts", root_path %></p>
-			<% if user_signed_in? %>
-        <button class="button" style="float: right"><%= link_to "New Post", new_post_path %></button>
-        <button class="button" style="float: right"><%= link_to "Inbox", mailbox_inbox_path %></button>
-    </h4>
-			<% else %>
-				<div class="buttons">
-            		<button class="active"><%= link_to "Login", new_user_session_path %></button>
-            		<button><%= link_to "Sign up", new_user_registration_path %></button>
-				</div>
-			<% end %>
+		
+		<!-- nav bar --> 
+		<div class="navbar navbar-fixed-top" id="header">
+			<!-- responsive nav bar -->
+			<div class="container">
+			<div class="nav-collapse collapse navbard-responsive-collapse">
+			</div> <!-- end nav collapse-->
+
+
+			<div><p style="font-size: 1em; font-weight:100; text-transform: uppercase "><%= link_to "All Posts", root_path %></p> 
+
+
+				<% if user_signed_in? %>
+	        <button class="button" style=" float:right; text-transform:uppercase"><%= link_to "New Post", new_post_path %></button>
+	        <button class="button" style="float:right; text-transform:uppercase"><%= link_to "Inbox", mailbox_inbox_path %></button>
+	      	
+	    	</div>
+				<% else %>
+					<div class="buttons">
+	            		<button class="active"><%= link_to "Login", new_user_session_path %></button>
+	            		<button><%= link_to "Sign up", new_user_registration_path %></button>
+					</div>
+				<% end %>
+			</div>
 		</div>
+
+
 
 		<% flash.each do |name, msg| %>
 			<%= content_tag(:div, msg, class: "alert") %>
@@ -49,6 +108,10 @@
 
 		<%= yield %>
 	</div>
+
+
+
+
 
 </body>
 </html>
