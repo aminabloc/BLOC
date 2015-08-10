@@ -1,4 +1,4 @@
-<div id="post_content">
+<div id="post_content" >
 	
 	<p class ="user">
 		<%= @post.user.name %>
@@ -16,7 +16,7 @@
 		<% end %>
 	</p>
 
-	<p class="body">
+	<p class="body" style="font-size: 1.2em; margin: 2em; float:left" >
   <%= linkify_hashtags(@post.body) %>
 	</p>
 
@@ -29,5 +29,8 @@
 		<h3>Add a comment:</h3>
 		<%= render "comments/form" %>
 	</div>
+	
+	<div style="border: 1px solid #D4AF37; border-radius: 1.5em; padding:0em .5em; width:13.5em; text-align: center">
+		<%= link_to "All Posts", root_path %></p> 
 
 </div>

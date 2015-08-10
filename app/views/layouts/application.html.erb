@@ -12,9 +12,6 @@
 <body>
    
 
-   
-               
-
 
 
 
@@ -24,7 +21,7 @@
                 <div class="row title">
                     <h2 class="h2">Black Collegiate Excellence</h2>
                     <div class="page-breadcrumb">
-                        <a>Home</a>/<a href="content.html">Content</a>/<span>Inbox</span>
+                        <a>Home</a>/<a href="wwww.ourbloc.co/content">Content</a>/<span>Inbox</span>
                     </div>
                 </div>
             </div>
@@ -69,6 +66,42 @@
 			<p class="sign_in">Admin Login</p>
 		<% end %>
 	</div>
+</div>
+
+<div id="sidebar" style="float:right">
+		<div "side-menu cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right">
+		<ul>
+			<li class="bloc" style="color:white; font-size: 1.5em; padding: 1em 0em"> BLOC </li>
+			<li class="category">Websites</li>
+			<li><%= link_to "Bloc", root_path %></li>
+			<li><%= link_to "About", about_path %></li>
+		</ul>
+
+
+		<ul>
+			<li class="category">Social</li>
+			<li><a href="https://ourbloc.co">Our Bloc</a></li>
+			<li><a href="mailto:kope@ourbloc.co">Email</a></li>
+			<% if user_signed_in? %>
+				<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+			<% end %>
+		</ul>
+		<% if !user_signed_in? %>
+			<p class="sign_in">Admin Login</p>
+		<% end %>
+	</div>
+</div>
+
+<div class="right-bar"> 
+	<ul> <img id="logo-right" src="http://www.ourbloc.co/uploads/2/4/0/1/24014742/9544735.png?43" atl="Bloc Logo">
+	</ul>
+	
+		<li> Achieve </li>
+		<li> Connect </li>
+		<li> Engage </li>
+
+
+	<ul> 
 </div>
 
 

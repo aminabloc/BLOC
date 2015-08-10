@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BLOC</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Actor:400,700' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+
+<body>
+   
+
+   
+               
+
+
+
+
+	<!-- Intro Section -->
+        <section class="inner-intro bg-img2 overlay-light parallax parallax-background2">
+            <div class="container">
+                <div class="row title">
+                    <h2 class="h2">Black Collegiate Excellence</h2>
+                    <div class="page-breadcrumb">
+                        <a>Home</a>/<a>Content</a>/<span>Inbox</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="clearfix"></div>
+        <!-- End Intro Section -->
+
+
+
+
+
+        <!-- Work Section -->
+        <section class="ptb ptb-sm-80" style="padding: 0em 0em 0em 50em"> 
+                <!-- work Filter -->
+
+                <div class="row">
+                    <ul class="container-filter categories-filter">
+                        <li><a class="categories active" data-filter="*">All</a></li>
+                        <li><a class="categories" data-filter=".branding">Achieve</a></li>
+                        <li><a class="categories" data-filter=".design">Connect</a></li>
+                        <li><a class="categories" data-filter=".photo">Engage</a></li>
+                    </ul>
+                </div>
+                <!-- End work Filter -->
+                
+                <div class="row container-grid nf-col-3">
+
+                    <div class="nf-item branding coffee spacing">
+                        <div class="item-box">
+                            <a href="portfolio-single1.html">
+                                <img alt="1" src="http://www.ourbloc.co/uploads/2/4/0/1/24014742/4672029_orig.png" class="item-container">
+                                <div class="item-mask">
+                                    <div class="item-caption">
+                                        <h5 class="white">Consequat massa quis</h5>
+                                        <p class="white">Branding, Design</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                
+                    <div class="nf-item photo spacing">
+                        <div class="item-box">
+                            <a href="portfolio-single2.html">
+                                <img alt="1" src="http://www.ourbloc.co/uploads/2/4/0/1/24014742/9094357_orig.png" class="item-container">
+                                <div class="item-mask">
+                                    <div class="item-caption">
+                                        <h5 class="white">Bookmarksgrove right at</h5>
+                                        <p class="white">Branding, Design, Coffee</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                   
+
+            </div>
+
+
+        </section>
+        <!-- End Work Section -->
+
+
+
+
+        
+          
+        <!-- END FOOTER -->
+
+        <!-- Scroll Top -->
+        <a class="scroll-top">
+            <i class="fa fa-angle-double-up"></i>
+        </a>
+        <!-- End Scroll Top -->
+
+    </div>
+
+	<div id="sidebar">
+		<div "side-menu cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right">
+		<ul>
+			<li class="bloc" style="color:white; font-size: 1.5em; padding: 1em 0em"> BLOC </li>
+			<li class="category">Websites</li>
+			<li><%= link_to "Bloc", root_path %></li>
+			<li><%= link_to "About", about_path %></li>
+		</ul>
+
+
+		<ul>
+			<li class="category">Social</li>
+			<li><a href="https://ourbloc.co">Our Bloc</a></li>
+			<li><a href="mailto:kope@ourbloc.co">Email</a></li>
+			<% if user_signed_in? %>
+				<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+			<% end %>
+		</ul>
+		<% if !user_signed_in? %>
+			<p class="sign_in">Admin Login</p>
+		<% end %>
+	</div>
+</div>
+
+
+
+	<div id="main_content">
+		
+		<!-- nav bar --> 
+		<div class="navbar navbar-fixed-top" id="header">
+			<!-- responsive nav bar -->
+			<div class="container">
+			<div class="nav-collapse collapse navbard-responsive-collapse">
+			</div> <!-- end nav collapse-->
+
+
+			<div><p style="font-size: 1em; font-weight:100; text-transform: uppercase "><%= link_to "All Posts", root_path %></p> 
+
+
+				<% if user_signed_in? %>
+	        <button class="button" style=" float:right; text-transform:uppercase"><%= link_to "New Post", new_post_path %></button>
+	        <button class="button" style="float:right; text-transform:uppercase"><%= link_to "Inbox", mailbox_inbox_path %></button>
+	      	
+	    	</div>
+				<% else %>
+					<div class="buttons">
+	            		<button class="active"><%= link_to "Login", new_user_session_path %></button>
+	            		<button><%= link_to "Sign up", new_user_registration_path %></button>
+					</div>
+				<% end %>
+			</div>
+		</div>
+
+
+
+		<% flash.each do |name, msg| %>
+			<%= content_tag(:div, msg, class: "alert") %>
+		<% end %>
+
+		<%= yield %>
+	</div>
+
+
+
+
+
+</body>
+</html>
+
