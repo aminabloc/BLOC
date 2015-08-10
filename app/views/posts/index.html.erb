@@ -1,6 +1,11 @@
 <% @posts.each do |post| %>
 	<div class="post_wrapper">
-		<h2 class ="user"><%= post.user.name %>
+
+		<%if post.user.name == current_user.name %>
+			<h2 class="user"> Me </h2>
+			<% else %>
+				<h2 class ="user"><%= post.user.name %>
+		<%end %>
 		<h2 class="title"><%= link_to post.title, post %></h2>
 		<h2 class="body"><%= linkify_hashtags(post.body) %></h2>
 		<h2 class="image"><%= image_tag post.image.url(:medium) %></h2>
