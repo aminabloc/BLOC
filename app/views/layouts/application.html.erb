@@ -16,10 +16,10 @@
 
 
 	<!-- Intro Section -->
-        <section class="inner-intro bg-img2 overlay-light parallax parallax-background2">
-            <div class="container" id="background-img">
+        <section id="background-img" class="inner-intro bg-img2 overlay-light parallax parallax-background2">
+            <div class="container" >
                 <div class="row title">
-                    <h2 class="h2">Black Collegiate Excellence</h2>
+                    <h2 class="h2" style="font-weight:600;color:black;font-size:2.5em; margin-top:5em">Black Collegiate Excellence</h2>
                     <div class="page-breadcrumb">
                         <a>Home</a>/<a href="wwww.ourbloc.co/content">Content</a>/<span>Inbox</span>
                     </div>
@@ -99,9 +99,9 @@
 		<li> </li>
 
 	
-		<li> <<%= link_to "#Achieve", hashtag_path("achieve") %> </li>
-		<li> <<%= link_to "#Connect", hashtag_path("connect") %> </li>
-		<li> <<%= link_to "#Engage", hashtag_path("engage") %> </li>
+		<li> <%= link_to "#Achieve", hashtag_path("achieve") %> </li>
+		<li> <%= link_to "#Connect", hashtag_path("connect") %> </li>
+		<li> <%= link_to "#Engage", hashtag_path("engage") %> </li>
 
 
 
@@ -127,9 +127,13 @@
 
 
 				<% if user_signed_in? %>
+			<button class="button" style="float:right; text-transform:uppercase"><%= link_to "Edit Profile", edit_user_registration_path %></button>
+	      
 	        <button class="button" style=" float:right; text-transform:uppercase"><%= link_to "New Post", new_post_path %></button>
 	        <button class="button" style="float:right; text-transform:uppercase"><%= link_to "Inbox", mailbox_inbox_path %></button>
-	      	
+	        	<!-- unread msg counter -->
+	        		<span class="label label-danger pull-right"><%=unread_messages_count%></span>
+
 	    	</div>
 				<% else %>
 					<div class="buttons">
