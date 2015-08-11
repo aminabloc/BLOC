@@ -15,3 +15,8 @@
 //= require turbolinks
 //= require_tree .
 
+$(document).ready(function() {
+    $("#hide").click(function(event){
+        $('body').animate({scrollTop: '+=500px'},100);
+    });
+});

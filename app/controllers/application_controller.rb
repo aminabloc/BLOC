@@ -28,11 +28,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) << :skills
     devise_parameter_sanitizer.for(:account_update) << :gradyear
 
-    devise_parameter_sanitizer.for(:account_update) << :companyname
-    devise_parameter_sanitizer.for(:account_update) << :city
-    devise_parameter_sanitizer.for(:account_update) << :industry
-    devise_parameter_sanitizer.for(:account_update) << :hiringfor 
-    devise_parameter_sanitizer.for(:account_update) << :topskilss
     
   end
 end
