@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   
   
+  devise_for :companies
   devise_for :users
   resources :posts do
   	resources :comments
   end
 
- match 'users/:id' => 'users#show', via: :get
+  resources :users
 
   root "posts#index"
 

@@ -20,6 +20,23 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
-    devise_parameter_sanitizer.for(:account_update) << :name
+    devise_parameter_sanitizer.for(:account_update) << :school
+    devise_parameter_sanitizer.for(:account_update) << :major
+    devise_parameter_sanitizer.for(:account_update) << :experience
+    devise_parameter_sanitizer.for(:account_update) << :name 
+    devise_parameter_sanitizer.for(:account_update) << :image
+    devise_parameter_sanitizer.for(:account_update) << :skills
+    devise_parameter_sanitizer.for(:account_update) << :gradyear
+
+    devise_parameter_sanitizer.for(:account_update) << :companyname
+    devise_parameter_sanitizer.for(:account_update) << :city
+    devise_parameter_sanitizer.for(:account_update) << :industry
+    devise_parameter_sanitizer.for(:account_update) << :hiringfor 
+    devise_parameter_sanitizer.for(:account_update) << :topskilss
+    
   end
 end
+
+
+
+
