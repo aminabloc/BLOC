@@ -20,7 +20,7 @@
             <div class="container" >
                 <div class="row title">
                     <h2 class="h2" style="font-weight:600;color:black;font-size:2.5em; margin-top:5em">Black Collegiate Excellence</h2>
-                    <div class="page-breadcrumb">
+                    <div style="font:2em" class="page-breadcrumb">
                         <a href="/users.html">Network</a>/<a href="/mailbox/inbox.html"> Inbox</a> /<a href="/posts.html">All Posts</span>
                     </div>
                 </div>
@@ -95,8 +95,9 @@
 <div class="right-bar"> 
 	<ul> <img id="logo-right" src="http://www.ourbloc.co/uploads/2/4/0/1/24014742/9544735.png?43" atl="Bloc Logo">
 	</ul>
-		<li ><%= link_to "All Posts", root_path %></li> 
+		<li ><%= link_to "BLOC", root_path %></li> 
 		<li> </li>
+		
 
 	
 		<li> <%= link_to "#Achieve", hashtag_path("achieve") %> </li>
@@ -123,17 +124,20 @@
 			</div> <!-- end nav collapse-->
 
 
-			<div><p style="font-size: 1em; font-weight:100; text-transform: uppercase "><%= link_to "All Posts", root_path %></p> 
+			<div><p style="font-size: 1.5em; font-weight:100; text-transform: uppercase "><%= link_to "BLOC", root_path %></p> 
 
 
 				<% if user_signed_in? %>
 			<button class="button" id="hide" style="float:right; text-transform:uppercase"><%= link_to "Edit Profile", edit_user_registration_path %></button>
 	      
 	        <button class="button" id="hide" style=" float:right; text-transform:uppercase"><%= link_to "New Post", new_post_path %></button>
-	        <button class="button" id="hide" style="float:right; text-transform:uppercase"><%= link_to "Inbox", mailbox_inbox_path %></button>
-	        	<!-- unread msg counter -->
-	        		<span class="label label-danger pull-right"><%=unread_messages_count%></span>
+	        
 			<button class="button" id="hide" style="float:right; text-transform:uppercase"><%= link_to "Network", users_path %></button>
+			<button class="button" style="float:right; text-transform:uppercase"><%= link_to "All Posts", root_path %></li> 
+			<button class="button" id="hide" style="float:right; text-transform:uppercase"><%= link_to "Inbox", mailbox_inbox_path %></button>
+	        	<!-- unread msg counter -->
+	        	<span class="label label-danger pull-right"><%=unread_messages_count%></span>
+	
 
 
 	    	</div>
@@ -160,6 +164,5 @@
 
 
 </body>
-intro
 </html>
 

@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :jobapps
+
   root "posts#index"
 
   get '/about', to: 'pages#about'

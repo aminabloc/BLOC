@@ -1,0 +1,13 @@
+<% @jobapp.each do |jobapp| %>
+	<div class="post_wrapper">
+
+		<%if jobapp.user.name == current_user.name %>
+			<h2 class="user"> Me </h2>
+			<% else %>
+				<h2 class ="user"><%= jobapp.user.name %>
+		<%end %>
+		<h2 class="title"><%= link_to jobapp.title, jobapp %></h2>
+		<p class="data"><%= jobapp.created_at.strftime("%B, %d, %Y") %></p>
+	</div>
+<% end %>
+

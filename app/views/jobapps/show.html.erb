@@ -1,0 +1,23 @@
+<div id="post_content" >
+	
+	<p class ="user">
+		<%= @jobapp.user.name %>
+	<h1 class="title">
+		<%= @jobapp.title %>
+	</h1>
+
+
+	<p class="date">
+		Submitted <%= time_ago_in_words(@jobapp.created_at) %> Ago
+		
+		<% if user_signed_in? %>
+			| <%= link_to 'Edit', edit_jobapp_path(@jobapp) %> 
+			| <%= link_to 'Delete', jobapp_path(@jobapp), method: :delete, data: { confirm: 'Are You Sure?' } %>
+		<% end %>
+	</p>
+
+
+ 
+		<%= link_to "All Posts", index_jobapp_path %></p> 
+
+</div>
