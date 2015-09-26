@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BLOC</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Actor:400,700' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+
+<body>
+   
+
+
+
+
+	<!-- Intro Section -->
+        <section id="background-img" class="inner-intro bg-img2 overlay-light parallax parallax-background2">
+            <div class="container" >
+                <div class="row title">
+                    <h2 class="h2" style="font-weight:600;color:black;font-size:2.5em; margin-top:5em">Black Collegiate Excellence</h2>
+                    <div style="font:2em" class="page-breadcrumb">
+                        <a href="/users.html">Network</a>/<a href="/mailbox/inbox.html"> Inbox</a> /<a href="/posts.html">All Posts</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="clearfix"></div>
+        <!-- End Intro Section -->
+
+
+
+
+        
+          
+        <!-- END FOOTER -->
+
+        <!-- Scroll Top -->
+        <a class="scroll-top">
+            <i class="fa fa-angle-double-up"></i>
+        </a>
+        <!-- End Scroll Top -->
+
+    </div>
+
+	<div id="sidebar">
+		<div "side-menu cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right">
+		<ul>
+			<li class="bloc" style="color:white; font-size: 1.5em; padding: 1em 0em"> BLOC </li>
+			<li class="category">Websites</li>
+			<li><%= link_to "Bloc", root_path %></li>
+			<li><%= link_to "About", about_path %></li>
+		</ul>
+
+
+		<ul>
+			<li class="category">Social</li>
+			<li><a href="https://ourbloc.co">Our Bloc</a></li>
+			<li><a href="mailto:kope@ourbloc.co">Email</a></li>
+			<% if user_signed_in? %>
+				<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+			<% end %>
+		</ul>
+		<% if !user_signed_in? %>
+			<p class="sign_in">Admin Login</p>
+		<% end %>
+	</div>
+</div>
+
+<div id="sidebar" style="float:right">
+		<div "side-menu cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right">
+		<ul>
+			<li class="bloc" style="color:white; font-size: 1.5em; padding: 1em 0em"> BLOC </li>
+			<li class="category">Websites</li>
+			<li><%= link_to "Bloc", root_path %></li>
+			<li><%= link_to "About", about_path %></li>
+		</ul>
+
+
+		<ul>
+			<li class="category">Social</li>
+			<li><a href="https://ourbloc.co">Our Bloc</a></li>
+			<li><a href="mailto:kope@ourbloc.co">Email</a></li>
+			<% if user_signed_in? %>
+				<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+			<% end %>
+		</ul>
+		<% if !user_signed_in? %>
+			<p class="sign_in">Admin Login</p>
+		<% end %>
+	</div>
+</div>
+
+<div class="right-bar"> 
+	<ul> <img id="logo-right" src="http://www.ourbloc.co/uploads/2/4/0/1/24014742/9544735.png?43" atl="Bloc Logo">
+	</ul>
+		<li ><%= link_to "BLOC", root_path %></li> 
+		<li> </li>
+		
+
+	
+		<li> <%= link_to "#Achieve", hashtag_path("achieve") %> </li>
+		<li> <%= link_to "#Connect", hashtag_path("connect") %> </li>
+		<li> <%= link_to "#Engage", hashtag_path("engage") %> </li>
+
+
+
+
+
+
+	<ul> 
+</div>
+
+
+
+	<div id="main_content">
+		
+		<!-- nav bar --> 
+		<div class="navbar navbar-fixed-top" id="header">
+			<!-- responsive nav bar -->
+			<div class="container">
+			<div class="nav-collapse collapse navbard-responsive-collapse">
+			</div> <!-- end nav collapse-->
+
+
+			<div><p style="font-size: 1.5em; font-weight:100; text-transform: uppercase "><%= link_to "BLOC", root_path %></p> 
+
+
+				<% if user_signed_in? %>
+			<button class="button" id="hide" style="float:right; text-transform:uppercase"><%= link_to "Edit Profile", edit_user_registration_path %></button>
+	      
+	        <button class="button" id="hide" style=" float:right; text-transform:uppercase"><%= link_to "New Post", new_post_path %></button>
+	        
+			<button class="button" id="hide" style="float:right; text-transform:uppercase"><%= link_to "Network", users_path %></button>
+			<button class="button" style="float:right; text-transform:uppercase"><%= link_to "All Posts", root_path %></li> 
+			<button class="button" id="hide" style="float:right; text-transform:uppercase"><%= link_to "Inbox", mailbox_inbox_path %></button>
+	        	<!-- unread msg counter -->
+	        	<span class="label label-danger pull-right"><%=unread_messages_count%></span>
+	
+
+
+	    	</div>
+				<% else %>
+					<div class="buttons">
+	            		<button class="active"><%= link_to "Login", new_user_session_path %></button>
+	            		<button><%= link_to "Sign up", new_user_registration_path %></button>
+					</div>
+				<% end %>
+			</div>
+		</div>
+
+
+
+		<% flash.each do |name, msg| %>
+			<%= content_tag(:div, msg, class: "alert") %>
+		<% end %>
+
+		<%= yield %>
+	</div>
+
+
+
+
+
+</body>
+</html>
+

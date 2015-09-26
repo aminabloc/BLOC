@@ -1,0 +1,29 @@
+<% @users.each do |user| %>
+	<div class="post_wrapper">
+		<table style="height: 10em">
+			<td>
+				<h2 class="image"><%= image_tag user.image.url(:small) %></h2>
+			</td>
+
+
+			<td>
+
+		<%if user.name == current_user.name %>
+			<h2 class="user"> Me </h2>
+			<% else %>
+				<h2 class ="user"><%= link_to user.name, user %>
+		<%end %>
+	</div>
+</td>
+
+	<td>
+	<p class ="user">
+		<%= user.school %>
+	</p>
+
+	<p class ="user">
+			<%= user.major %>
+		</p>
+	</td>
+
+<% end %>
