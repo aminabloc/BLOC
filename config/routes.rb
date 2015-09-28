@@ -9,10 +9,11 @@ Rails.application.routes.draw do
   end
 
   resources :users
-
+  resources :studenthome
+  resources :companyhome
   resources :jobapps
 
-  root "posts#index"
+ root "posts#index"
 
   get '/about', to: 'pages#about'
   get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox

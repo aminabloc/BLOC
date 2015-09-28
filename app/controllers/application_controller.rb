@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
   def conversation
     @conversation ||= mailbox.conversations.find(params[:id])
   end
+
  
   protected
 
@@ -27,11 +28,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) << :image
     devise_parameter_sanitizer.for(:account_update) << :skills
     devise_parameter_sanitizer.for(:account_update) << :gradyear
-
-    
   end
+
+
 end
-
-
 
 

@@ -1,0 +1,38 @@
+
+<% @posts.each do |post| %>
+	<div class="post_wrapper">
+
+		<%if post.user.name == current_user.name %>
+			<h2 class="user"> Me </h2>
+			<% else %>
+				<h2 class ="user"><%= post.user.name %>
+		<%end %>
+
+		<h2 class="title"><%= link_to post.title, post %></h2>
+		<h2 class="body"><%= linkify_hashtags(post.body) %></h2>
+		<h2 class="image"><%= image_tag post.image.url(:medium) %></h2>
+		<p class="data"><%= post.created_at.strftime("%B, %d, %Y") %></p>
+	</div>
+<% end %>
+
+<% @jobs.each do |job| %>
+	<div class="post_wrapper">
+
+		<h2 class="title"><%= link_to job.title, job %></h2>
+		<h2 class="description"><%= linkify_hashtags(job.description) %></h2>
+		<p class="data"><%= job.created_at.strftime("%B, %d, %Y") %></p>
+	</div>
+<% end %>
+
+<% @jobs.each do |job| %>
+<div class="post_wrapper"> 
+      <tr>
+        <td><%= job.title %></td>
+        <td><%= job.deadline %></td>
+        <td><%= job.text %></td>
+        <td><%= link_to 'Show', job %></td>
+        <td><%= link_to 'Edit', edit_job_path(job) %></td>
+        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+ </div>
