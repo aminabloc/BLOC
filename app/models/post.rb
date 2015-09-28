@@ -7,4 +7,11 @@ class Post < ActiveRecord::Base
 	has_attached_file :image, styles: { medium: "300x300>" }
 	validates_attachment_file_name :image, :matches => [/png\Z/, /jpe?g\Z/]
   acts_as_taggable	  	
+
+
+  def self.search(query)
+    # where(:title, query) -> This would return an exact match of the query
+    where("title like ?", "%#{query}%") 
+
+  end
 end
