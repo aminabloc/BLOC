@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150926231858) do
+ActiveRecord::Schema.define(version: 20151001171634) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "name"
@@ -48,6 +48,14 @@ ActiveRecord::Schema.define(version: 20150926231858) do
 
   add_index "companies", ["email"], name: "index_companies_on_email", unique: true
   add_index "companies", ["reset_password_token"], name: "index_companies_on_reset_password_token", unique: true
+
+  create_table "japps", force: :cascade do |t|
+    t.text     "statement"
+    t.text     "resume"
+    t.text     "cover"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "jobapps", force: :cascade do |t|
     t.string   "title"

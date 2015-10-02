@@ -1,6 +1,6 @@
 class CompanyhomeController < ApplicationController
 	def index
-		@jobs= Job.all
+		@jobs= @user.jobs
 
 	end
 end

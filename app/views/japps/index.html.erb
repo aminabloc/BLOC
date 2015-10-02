@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>My Job Applications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Statement</th>
+      <th>Resume</th>
+      <th>Cover</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @japps.each do |japp| %>
+      <tr>
+        <td><%= japp.statement %></td>
+        <td><%= japp.resume %></td>
+        <td><%= japp.cover %></td>
+        <td><%= link_to 'Show', japp %></td>
+        <td><%= link_to 'Edit', edit_japp_path(japp) %></td>
+        <td><%= link_to 'Destroy', japp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Japp', new_japp_path %>

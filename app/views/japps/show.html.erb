@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Statement:</strong>
+  <%= @japp.statement %>
+</p>
+
+<p>
+  <strong>Resume:</strong>
+  <%= @japp.resume %>
+</p>
+
+<p>
+  <strong>Cover:</strong>
+  <%= @japp.cover %>
+</p>
+
+<%= link_to 'Edit', edit_japp_path(@japp) %> |
+<%= link_to 'Back', japps_path %>

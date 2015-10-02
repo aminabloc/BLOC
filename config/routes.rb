@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
   
   
-  resources :jobs
+
+  resources :jobs do
+    resources :japps 
+  end
+
   devise_for :companies
   devise_for :users
+  
   resources :posts do
   	resources :comments
   end

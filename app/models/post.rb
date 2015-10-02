@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
 	has_many :hashtags
 	validates :title, presence:true, length: {minimum: 5}
 	validates :body, presence:true
-	has_attached_file :image, styles: { medium: "300x300>" }
+	has_attached_file :image, styles: { medium: "100x100>" }
 	validates_attachment_file_name :image, :matches => [/png\Z/, /jpe?g\Z/]
   acts_as_taggable	  	
 

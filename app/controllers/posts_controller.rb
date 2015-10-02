@@ -6,10 +6,8 @@ class PostsController < ApplicationController
     else
       if params[:hashtag]
         @posts = Post.tagged_with(params[:hashtag]).order('created_at DESC')
-
       else
         @posts = Post.all.order('created_at DESC')
-        @jobs = Job.all.order('created_at DESC')
 
       end
     end

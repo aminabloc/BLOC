@@ -1,10 +1,6 @@
 <p id="notice" class="job" ><%= notice %></p>
 
- <p>
-  <strong>Posted by:</strong>
-  <%= @job.user.name %>
-</p>
-
+<div id="job_wrapper">
 <p>
   <strong>Title:</strong>
   <%= @job.title %>
@@ -25,5 +21,8 @@
   <%= @job.text %>
 </p>
 
+
+
 <%= link_to 'Edit', edit_job_path(@job) %> |
 <%= link_to 'Back', jobs_path %>
+</div> 

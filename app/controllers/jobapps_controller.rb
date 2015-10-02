@@ -3,14 +3,25 @@ class JobappsController < ApplicationController
 
 	def index
         @jobapp = Jobapp.all.order('created_at DESC')
+
+        def create
+		
 	end
+
+	def destroy
+	
+	end
+	
 
 	def new
 		@jobapp = current_user.jobapps.build
 	end
 
 	def create
-		@jobapp = current_user.jobapps.build(job_params)
+		@job = Job.find(params[:job_id])
+		@japp = @job.japps.create(params[:japp].permit(:statement))
+
+		redirect_to job_path(@job)	
 	end
 
 	def show

@@ -1,0 +1,29 @@
+<%= form_for(@japp) do |f| %>
+  <% if @japp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@japp.errors.count, "error") %> prohibited this japp from being saved:</h2>
+
+      <ul>
+      <% @japp.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :statement %><br>
+    <%= f.text_area :statement %>
+  </div>
+  <div class="field">
+    <%= f.label :resume %><br>
+    <%= f.text_area :resume %>
+  </div>
+  <div class="field">
+    <%= f.label :cover %><br>
+    <%= f.text_area :cover %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
