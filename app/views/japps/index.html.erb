@@ -22,10 +22,14 @@
         <td><%= link_to 'Edit', edit_japp_path(japp) %></td>
         <td><%= link_to 'Destroy', japp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+
+      <tr> 
+              <tr> <%= render @job.japps %><tr>
+      </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<%end %> 
 <%= link_to 'New Japp', new_japp_path %>
