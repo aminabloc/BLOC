@@ -25,6 +25,7 @@ class JobappsController < ApplicationController
 	end
 
 	def show
+		@job = Job.find(params[:job_id])
 		@jobapp = Jobapp.find(params[:id])
 	end
 

@@ -9,7 +9,7 @@
 		<%end %>
 		<table style= "width: 800px; margin: 0px;" > 
 		<td style="width: 100px"> 
-			<div class="image"><%= image_tag post.user.image.url(:small) %></div>
+			<div class="image"><%= link_to (image_tag post.user.image.url(:small)),post.user %></div>
 		</td>
 
 		<td style="width: 90%">
@@ -17,7 +17,7 @@
 		<h2 class="body"><%= linkify_hashtags(post.body) %></h2>
 		</td> 
 		<td style="width: 10em; height: 10em">
-		<h2 class="image"><%= image_tag post.image.url(:medium) %></h2>
+		<h2 class="image"><%= link_to (image_tag post.image.url(:medium)),post %></h2>
 		</td>
 		<p class="data"><%= post.created_at.strftime("%B, %d, %Y") %></p>
 

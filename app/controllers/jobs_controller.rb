@@ -4,7 +4,8 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.all
+    @jobs = Job.all.order('created_at DESC')
+
   end
 
   # GET /jobs/1
@@ -15,17 +16,25 @@ class JobsController < ApplicationController
 
   # GET /jobs/new
   def new
-    @job = Job.new
+    @job = current_user.jobs.build
+    @job.user_id = current_user.id
+ 
   end
 
   # GET /jobs/1/edit
   def edit
+      @job = Job.find(params[:id])
+
   end
 
   # POST /jobs
   # POST /jobs.json
   def create
-    @job = Job.new(job_params)
+    @job = current_user.jobs.build(job_params)
+    @job.user_id = current_user.id
+    @job.user_name = current_user.name # assuming the user model has a username field
+   
+
 
     respond_to do |format|
       if @job.save
@@ -41,6 +50,8 @@ class JobsController < ApplicationController
   # PATCH/PUT /jobs/1
   # PATCH/PUT /jobs/1.json
   def update
+          @job = Job.find(params[:id])
+
     respond_to do |format|
       if @job.update(job_params)
         format.html { redirect_to @job, notice: 'Job was successfully updated.' }

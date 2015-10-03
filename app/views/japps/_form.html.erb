@@ -1,15 +1,5 @@
-<%= form_for(@japp) do |f| %>
-  <% if @japp.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@japp.errors.count, "error") %> prohibited this japp from being saved:</h2>
-
-      <ul>
-      <% @japp.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%=  form_for([@job, @job.japps.build], html: { multipart: true }) do |f| %>
+ 
 
   <div class="field">
     <%= f.label :statement %><br>
@@ -25,5 +15,6 @@
   </div>
   <div class="actions">
     <%= f.submit %>
+    <div class="actions">
   </div>
 <% end %>

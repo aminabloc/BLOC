@@ -1,22 +1,23 @@
 Rails.application.routes.draw do
+  devise_for :companies
+  devise_for :users
   
-  
+  resources :users
+
+  resources :studenthome
+  resources :companyhome
 
   resources :jobs do
     resources :japps 
-  end
+end
 
-  devise_for :companies
-  devise_for :users
+ 
   
   resources :posts do
   	resources :comments
   end
 
-  resources :users
-  resources :studenthome
-  resources :companyhome
-  resources :jobapps
+  
 
  root "posts#index"
 

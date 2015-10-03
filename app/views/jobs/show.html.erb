@@ -21,7 +21,21 @@
   <%= @job.text %>
 </p>
 
+<div id="comments">
+	<!-- counter for how many have applied --> 
+		<% if @job.japps.count == 0 %>
+			<p>Be the first to submit your application for this position! </p>
+		<% else %> 
+			<p><%= @job.japps.count %> applications have been submitted, get yours in quickly!  </p>
+			<% end %> 
 
+		<%= render @job.japps %>
+
+		<h3>Submit Your Application :</h3>
+		<%= render "japps/form" %>
+	</div>
+
+	
 
 <%= link_to 'Edit', edit_job_path(@job) %> |
 <%= link_to 'Back', jobs_path %>

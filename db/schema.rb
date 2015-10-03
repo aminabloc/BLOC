@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151001171634) do
+ActiveRecord::Schema.define(version: 20151003020213) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "name"
@@ -55,7 +55,10 @@ ActiveRecord::Schema.define(version: 20151001171634) do
     t.text     "cover"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "job_id"
   end
+
+  add_index "japps", ["job_id"], name: "index_japps_on_job_id"
 
   create_table "jobapps", force: :cascade do |t|
     t.string   "title"
@@ -75,7 +78,11 @@ ActiveRecord::Schema.define(version: 20151001171634) do
     t.string   "text"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_name"
+    t.integer  "user_id"
   end
+
+  add_index "jobs", ["user_id"], name: "index_jobs_on_user_id"
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
     t.integer "unsubscriber_id"
