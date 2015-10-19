@@ -1,3 +1,5 @@
+ 
+
  <%= form_tag(posts_path, :method => "get") do %>
  <div class="input-append" style="width: 75%">
       <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
@@ -13,7 +15,7 @@
 			<% else %>
 				<h2 class ="user"><%= link_to post.user.name , post.user %>
 		<%end %>
-		<table style= "width: 800px; margin: 0px;" > 
+		<table id="table_id" style= "width: 800px; margin: 0px;" > 
 		<td style="width: 100px"> 
 			<div class="image"><%= link_to (image_tag post.user.image.url(:small)),post.user %></div>
 		</td>

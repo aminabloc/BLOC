@@ -29,7 +29,7 @@ gem 'mailboxer'
 gem 'simple_hashtag'
 gem 'acts-as-taggable-on'
 
-gem 'searchkick'
+gem 'jquery-turbolinks'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

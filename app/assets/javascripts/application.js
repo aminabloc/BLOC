@@ -12,11 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 
-$(document).ready(function() {
-    $("#hide").click(function(event){
-        $('body').animate({scrollTop: '+=500px'},100);
-    });
-});
+
+
+//$(document).ready(function() {
+ //   $("button").click(function(event){
+   //     $('#background-img').hide();
+    //    $('#background-img').css('display','none');
+       
+   // });
+//});
+
+$
+$(document).ready( function () {
+    $('#table_id').DataTable();
+} );
