@@ -133,8 +133,11 @@
 	        <button class="button" id="hide" style=" float:right; text-transform:uppercase"><%= link_to "New Post", new_post_path %></button>
 	        
 			<button class="button" id="hide" style="float:right; text-transform:uppercase"><%= link_to "Network", users_path %></button>
-			<button class="button" style="float:right; text-transform:uppercase"><%= link_to "All Posts", root_path %></li> 
+			<button class="button" style="float:right; text-transform:uppercase"><%= link_to "All Posts", posts_path %></li> 
 			<button class="button" style="float:right; text-transform:uppercase"><%= link_to "All Jobs", jobs_path %></li> 
+
+
+
 			<button class="button" id="hide" style="float:right; text-transform:uppercase"><%= link_to "Inbox", mailbox_inbox_path %></button>
 	        	<!-- unread msg counter -->
 	        	<span class="label label-danger pull-right"><%=unread_messages_count%></span>

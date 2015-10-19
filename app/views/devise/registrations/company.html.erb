@@ -1,6 +1,6 @@
 <h2>Corporate Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: company_registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(company) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="form-group">
@@ -36,7 +36,5 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-
-
 
 <%= render "devise/shared/links" %>

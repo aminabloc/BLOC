@@ -1,7 +1,7 @@
 class JappsController < ApplicationController
   def index
     @job = Job.find(params[:job_id])  
-    @japps= job.comments
+    @japps= @job.japps.all
   end
 
   def new

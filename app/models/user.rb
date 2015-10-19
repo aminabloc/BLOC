@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :posts  
   has_many :jobs 
 
-  ROLES= %w[admin student fellow team]
+  ROLES= %w[admin student fellow company]
 
 
   has_attached_file :image, styles: { small: "100x100>" }
@@ -23,11 +23,16 @@ class User < ActiveRecord::Base
     self.email
   end
 
-  def self.search(query)
-    # where(:title, query) -> This would return an exact match of the query
-    where("name like ?", "%#{query}%") 
+  def self.search(search)
+    User.where('name LIKE :search OR major LIKE :search OR school LIKE :search OR gradyear LIKE :search', search: "%#{search}%")
 
   end
 
+  after_create
+    :assign_role
+
+    def assign_role
+        self.role ||= Role.find_by_name('student')
+      end
 end
 

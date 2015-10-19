@@ -1,6 +1,8 @@
 class CompanyhomeController < ApplicationController
 	def index
-		@jobs= @user.jobs
 
-	end
+		  @jobs = Job.all.order('created_at DESC')
+      end
+
 end
+	
