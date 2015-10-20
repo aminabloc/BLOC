@@ -5,6 +5,9 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   helper_method :mailbox, :conversation
+
+
+
   
   private
  
@@ -30,6 +33,19 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) << :gradyear
   end
 
+
+
+ def resource_name
+    :user
+    end
+
+  def resource
+    @resource ||= User.new
+  end
+
+  def devise_mapping
+    @devise_mapping ||= Devise.mappings[:user]
+  end
 
 end
 

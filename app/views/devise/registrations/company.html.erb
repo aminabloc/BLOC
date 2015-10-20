@@ -1,6 +1,6 @@
 <h2>Corporate Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(company) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="form-group">
@@ -11,11 +11,6 @@
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :school %><br />
-    <%= f.text_field :school, class: "form-control" %>
   </div>
 
 
