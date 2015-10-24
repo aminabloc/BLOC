@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 		      elsif params[:hashtag]
 		        @posts = Post.tagged_with(params[:hashtag]).order('created_at DESC')
 		      else
-		        @posts = Post.all.order('created_at DESC')
+ 				@posts = Post.all
 
       end
     end

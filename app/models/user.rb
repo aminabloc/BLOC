@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+         
   has_many :posts  
   has_many :jobs 
 
@@ -27,6 +28,7 @@ class User < ActiveRecord::Base
     User.where('name LIKE :search OR major LIKE :search OR school LIKE :search OR gradyear LIKE :search', search: "%#{search}%")
 
   end
+
 
   after_create
     :assign_role

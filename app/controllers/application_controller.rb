@@ -31,8 +31,31 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) << :image
     devise_parameter_sanitizer.for(:account_update) << :skills
     devise_parameter_sanitizer.for(:account_update) << :gradyear
+    devise_parameter_sanitizer.for(:account_update) << :orgs
+    devise_parameter_sanitizer.for(:account_update) << :links
+    devise_parameter_sanitizer.for(:account_update) << :threeskills
+    devise_parameter_sanitizer.for(:account_update) << :phone
+    devise_parameter_sanitizer.for(:account_update) << :testimonial
+    devise_parameter_sanitizer.for(:account_update) << :geo
+    devise_parameter_sanitizer.for(:account_update) << :hometown
+    devise_parameter_sanitizer.for(:account_update) << :company
+    devise_parameter_sanitizer.for(:account_update) << :mission
+    devise_parameter_sanitizer.for(:account_update) << :industry
+    devise_parameter_sanitizer.for(:account_update) << :statement
+    devise_parameter_sanitizer.for(:account_update) << :title
   end
 
+def resource_name
+:user
+end
+
+def resource
+@resource ||= User.new
+end
+
+def devise_mapping
+@devise_mapping ||= Devise.mappings[:user]
+end
 
 
  def resource_name
