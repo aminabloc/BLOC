@@ -14,7 +14,6 @@
  *= require_self
  */
 
- @import 'normalize';
  @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "new";
@@ -22,7 +21,7 @@
 @import "style";
 @import "font-awesome";
 @import "navigation";
-@import "ionicons";
+
 
 
  html, body {

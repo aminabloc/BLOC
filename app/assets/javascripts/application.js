@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-
+//= require jquery.turbolinks
 
 
 //$(document).ready(function() {
@@ -28,3 +28,11 @@ $
 $(document).ready( function () {
     $('#table_id').DataTable();
 } );
+
+$(document).ready(function() {
+    $(".toggle-signup").click(function(event){
+        $('#student-login').hide();
+       $('#company-login').show();
+       
+    });
+});

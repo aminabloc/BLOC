@@ -4,9 +4,8 @@
   <%= devise_error_messages! %>
 
   <div class="form-group">
-    <%= f.hidde_field :role, 'student', class: "form-control" %>
-    <%= f.radio_button :role, 'student', class: "form-control" %>
-    <%= f.radio_button :role, 'company', class: "toggle-signup" %>
+    <%= f.radio_button :role, 'student' %> Student
+    <%= f.radio_button :role, 'company', class: "toggle-signup" %> Company
   </div>
 
 
@@ -24,7 +23,7 @@
 </div> 
 
 <!-- student login on radio button click-->
-<div id= "company-login">
+<div id= "company-login" style= "display: none">
   <div class="field">
     <%= f.label :company %><br />
     <%= f.text_field :company, class: "form-control" %>
