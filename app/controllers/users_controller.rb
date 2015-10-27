@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
-		  
+	before_filter :check_role
+
+	
 
 		  def index
+		  	
+
 			if params[:search]
       			@users = User.search(params[:search])
     		else
@@ -11,12 +15,14 @@ class UsersController < ApplicationController
 			      format.xml  { render :xml => @users }
 		    end
 		  end
+		  
 		end
 
 	
 
 		  def show
 		    @user = User.find(params[:id])
+
 
 		    respond_to do |format|
 		      format.html # show.html.erb
@@ -32,6 +38,11 @@ class UsersController < ApplicationController
 			redirect_to @user 
       tags = @user.skills.scan( SimpleHashtag::Hashtag::HASHTAG_REGEX )
       @user.update_attribute(:tag_list, tags)
+      @user.resume = params[:user][:profile]
+
+   
+
+
 		else
 			render 'new'
 		end

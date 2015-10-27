@@ -8,4 +8,6 @@ class Job < ActiveRecord::Base
 	acts_as_taggable
 
 	has_many :japps
+
+	acts_as_likeable
 end

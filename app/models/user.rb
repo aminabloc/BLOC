@@ -5,10 +5,17 @@ class User < ActiveRecord::Base
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-         
+     
   has_many :posts  
   has_many :jobs 
 
+
+  #socialization gem 
+  acts_as_follower
+  acts_as_followable
+  acts_as_liker
+  acts_as_likeable
+  acts_as_mentionable
 
   has_attached_file :resume
 

@@ -28,10 +28,7 @@
 		<h2 class="image"><%= link_to (image_tag post.image.url(:medium)),post %></h2>
 		</td>
 		<p class="data"><%= post.created_at.strftime("%B, %d, %Y") %></p>
-
-
-
-
+		<button> <%= link_to 'like', likes_path(post) %></button>
 	</table>
 
 	

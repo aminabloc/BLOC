@@ -8,7 +8,9 @@ class Post < ActiveRecord::Base
 	has_attached_file :image, styles: { medium: "100x100>" }
 	validates_attachment_file_name :image, :matches => [/png\Z/, /jpe?g\Z/]
   
-  acts_as_taggable	  	
+  acts_as_taggable	 
+
+  acts_as_likeable 	
 
 
   def self.search(query)

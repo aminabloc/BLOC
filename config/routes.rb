@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   devise_for :companies
   devise_for :users
   
-  resources :users
+  
+
+resources :users do
+end
 
   resources :studenthome
   resources :companyhome
@@ -17,7 +20,8 @@ end
   	resources :comments
   end
 
-  
+  get 'post/:id/likes', to: 'posts#likes', as: :likes
+
 
  root "passthrough#index"
 
@@ -27,6 +31,8 @@ end
   get "mailbox/trash" => "mailbox#trash", as: :mailbox_trash
   get "hashtags/:hashtag",   to: "posts#index",      as: :hashtag
   get "hashtags",            to: "hashtags#index",     as: :hashtags
+
+
 
   devise_scope :user do
    get "/corporatesignup" => "devise/registrations#company"
