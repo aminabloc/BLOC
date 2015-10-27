@@ -4,20 +4,39 @@
   <%= devise_error_messages! %>
 
   <div class="form-group">
+    <%= f.hidde_field :role, 'student', class: "form-control" %>
+    <%= f.radio_button :role, 'student', class: "form-control" %>
+    <%= f.radio_button :role, 'company', class: "toggle-signup" %>
+  </div>
+
+
+  <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
+<!-- student login on radio button click-->
+<div id= "student-login">
   <div class="field">
     <%= f.label :school %><br />
     <%= f.text_field :school, class: "form-control" %>
   </div>
+</div> 
 
+<!-- student login on radio button click-->
+<div id= "company-login">
+  <div class="field">
+    <%= f.label :company %><br />
+    <%= f.text_field :company, class: "form-control" %>
+  </div>
+</div> 
+
+
+<!-- standard login fields for all accounts !--> 
+<div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
 
   <div class="field">
     <%= f.label :password %>
