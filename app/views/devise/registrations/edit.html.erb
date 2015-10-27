@@ -21,7 +21,10 @@
     <%= f.email_field :email, autofocus: true, class: "edit-wrapper"%>
   </div>
 
-
+    <div class="field">
+    <%= f.label :role %><br />
+    <%= f.email_field :role, autofocus: true, class: "edit-wrapper"%>
+  </div>
 
  <h2> Education </h2>
   <div class="form-group">
@@ -78,6 +81,11 @@
 <div class="form-group">
       <%= f.label :hometown %>
       <%= f.text_field :hometown, class: "edit-wrapper" %>
+  </div>
+
+<div class="form-group">
+      <%= f.label :resume %>
+      <%= f.file_field :resume, class: "edit-wrapper" %>
   </div>
 
 

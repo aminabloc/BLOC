@@ -45,6 +45,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) << :statement
     devise_parameter_sanitizer.for(:account_update) << :title
     devise_parameter_sanitizer.for(:account_update) << :role
+    devise_parameter_sanitizer.for(:account_update) << :resume
   end
 
 def resource_name
@@ -73,5 +74,11 @@ end
   end
 
 end
+
+ private
+  # Overwriting the sign_out redirect path method
+  def after_sign_out_path_for(user)
+    new_session_path
+  end
 
 

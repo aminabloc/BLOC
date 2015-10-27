@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
   has_many :posts  
   has_many :jobs 
 
+
+  has_attached_file :resume
+
+
   ROLES= %w[admin student fellow company]
 
 

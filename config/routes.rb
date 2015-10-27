@@ -19,7 +19,7 @@ end
 
   
 
- root "posts#index"
+ root "passthrough#index"
 
   get '/about', to: 'pages#about'
   get "mailbox/inbox" => "mailbox#inbox", as: :mailbox_inbox

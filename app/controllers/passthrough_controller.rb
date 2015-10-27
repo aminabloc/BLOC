@@ -1,16 +1,12 @@
 class PassthroughController < ApplicationController
-
   def index
-    path = case current_user.role
-      when 'company'
-        companyhome_path
-      when 'student'
-        studenthome_path
-      else
-        jobs_path
-    end	
-
-    redirect_to path     
+    
+    if @user && current_user.role == "company" 
+      redirect_to jobs_path
+    elsif @user && current_user.role == "student"
+      redirect_to student_path 
+    else
+      redirect_to jobs_path
+    end
   end
 end
-

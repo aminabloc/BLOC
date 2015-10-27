@@ -1,42 +1,39 @@
 <div >
 
-
-<h2 >
-		<%= @user.name %>
-	</p>
-
-<p>
-		<%= @user.gradyear %>
-	</p>
-
-<p>
-	<%= @user.school %>
-</p>
-
-<p>
-	<%= @user.major %>
-	</p>
-
-<p>
-	<%= @user.orgs %>
-	</p>
-
-<p>
-	<%= @user.links %>
+<table style="margin: 2%;	">
+	<td>
+	<h2 >
+			<%= image_tag @user.image.url(:small)%>
 		</p>
-	</p>
+	<h2 >
+		</td>
 
-<p>
-	<%= @user.threeskills %>
-		</p>
-	</p> 
+	<td>
+			<h3> <%= @user.name %> </h3>
+			<h3> Graduation Year </h3>
+				<p> <%= @user.gradyear %> </p>
+			<h3> College/University </h3>
+				<p><%= @user.school %></p>
+			
+	</td> 
+</table> 
+<h3> Major </h3>
+				<p><%= @user.major %></p>
+<h3> Organizations </h3>
+<p><%= @user.orgs %></p>
 
-<p>
-	<%= @user.geo %>
-		</p>
-	</p>
-<p>
-	<%= @user.hometown %>
-		</p>
-	</p>
+<h3> Portfolio Links </h3>
+<p><%= @user.links %></p>
+
+<h3> Three Skills I Am Learning </h3>
+<p><%= @user.threeskills %></p>
+	
+<h3> Cities I would Like to Work In </h3>
+<p><%= @user.geo %></p>
+
+<h3> Home Town </h3>
+<p><%= @user.hometown %></p>
+
+<h3> <%= link_to "Download Resume" , @user.resume.url %> </h3>
+	
 </div> 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151024085048) do
+ActiveRecord::Schema.define(version: 20151027195427) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "name"
@@ -206,6 +206,10 @@ ActiveRecord::Schema.define(version: 20151024085048) do
     t.text     "industy"
     t.string   "statement"
     t.string   "title"
+    t.string   "resume_file_name"
+    t.string   "resume_content_type"
+    t.integer  "resume_file_size"
+    t.datetime "resume_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
