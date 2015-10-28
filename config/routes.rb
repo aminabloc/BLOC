@@ -28,6 +28,8 @@ end
 
 
   get '/myjobs', to: 'jobs#myjobs', as: :myjobs
+  get '/liked', to: 'posts#liked', as: :liked_posts
+
   get 'post/:id/repost', to: 'postss#reposts', as: :reposts
 
 

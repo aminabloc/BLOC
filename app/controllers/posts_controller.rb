@@ -13,6 +13,17 @@ class PostsController < ApplicationController
 
       end
     end
+	
+
+	def liked
+		 unless user_signed_in?
+		    redirect_to new_user_session_path
+		  else
+		  		@user= current_user
+ 				@posts = Post.all
+ 				@liked = User.followees(Post)
+      end
+    end
 	end
 
 	def new

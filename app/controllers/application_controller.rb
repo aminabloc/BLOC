@@ -73,12 +73,13 @@ end
     @devise_mapping ||= Devise.mappings[:user]
   end
 
-end
+
 
  private
   # Overwriting the sign_out redirect path method
   def after_sign_out_path_for(user)
-    new_session_path
+    new_user_session_path
   end
 
+end
 

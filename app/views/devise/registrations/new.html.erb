@@ -3,9 +3,11 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="form-group">
-    <%= f.radio_button :role, 'student' %> Student
-    <%= f.radio_button :role, 'company', class: "toggle-signup" %> Company
+  <div class="radio-format">
+     <%= f.label "Student" %><span></span>
+    <%= f.radio_button :role, 'student' %> <span></span>
+     <%= f.label "Company" %>
+    <%= f.radio_button :role, 'company', class: "toggle-signup" %>
   </div>
 
 
