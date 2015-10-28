@@ -15,18 +15,20 @@
   </thead>
 
   <tbody>
-    <% @jobs.each do |job| %>
+    <% @jobs.each   do |job| %>
       <tr style="height: 60px; margin:5px; border-radius: 10px;">
-        <td><%= link_to job.user.name, job.user%></td>
+        <td><%= link_to job.user.company, jobs_path(@user)%></td>
         <td><%= link_to job.title, job %></td>
         <td><%= job.deadline %></td>
         <td><%= job.description %></td>
         <td><button> <%= link_to 'Apply Now', job %> </button></td>
         <td><%= link_to 'Edit', edit_job_path(job) %></td>
         <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-       
+
+        <td> <button> <%= link_to 'save', saves_path(job) %></button>
+        <% end %> </td>
       </tr>
-    <% end %>
+   
   </tbody>
 </table>
 

@@ -21,6 +21,9 @@
   <%= @job.text %>
 </p>
 
+<% if current_user == @job.user %>
+<%= render @job.japps %>
+<% else %> 
 <div id="comments">
 	<!-- counter for how many have applied --> 
 		<% if @job.japps.count == 0 %>
@@ -33,6 +36,8 @@
 		<h3>Submit Your Application :</h3>
 		<%= render "japps/form" %>
 	</div>
+	<%end%>
+
 
 	
 

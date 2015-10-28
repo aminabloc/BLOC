@@ -5,7 +5,6 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     @jobs = Job.all.order('created_at DESC')
-
   end
 
   # GET /jobs/1
@@ -24,8 +23,14 @@ class JobsController < ApplicationController
   # GET /jobs/1/edit
   def edit
       @job = Job.find(params[:id])
-
   end
+
+  def saves
+      @user = current_user # before_action :authenticate_user, only: [:likes]
+      @job = Job.find(params[:id])
+      @user.toggle_like!(@job)
+      redirect_to :back
+    end
 
   # POST /jobs
   # POST /jobs.json
@@ -71,6 +76,11 @@ class JobsController < ApplicationController
       format.html { redirect_to jobs_url, notice: 'Job was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+
+  def myjobs
+    @jobs = current_user.jobs
   end
 
   private

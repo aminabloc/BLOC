@@ -1,0 +1,24 @@
+<div class="comment clearfix">
+	<div class="post_wrapper">
+		<h3 class="comment_body"> Applicant Name </h3>
+		<p class="comment_body"><%= japp.name %></p>
+
+		<h3 class="comment_body"> Cover Letter </h3>
+		<p class="comment_body"><%= japp.cover %></p>
+
+		<h3 class="comment_body"> Resume </h3>
+		<p class="comment_body"><%= japp.resume %></p>
+
+		<p class="comment_time">Submitted<%= time_ago_in_words(japp.created_at) %> ago</p>
+
+		
+	
+	
+	<% if user_signed_in? %>
+		<p><%= link_to 'Delete', [japp.job, japp], 
+									method: :delete, 
+									class: "button", 
+									data: { confirm: 'Are you sure?' } %></p>
+	<% end %>
+</div>
+</div>

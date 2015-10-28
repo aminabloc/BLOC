@@ -1,5 +1,5 @@
 <table style="width: 950px; height:10%">
-	<%if job_id == current_user_id %> 
+	
   <thead>
     <tr>
  
@@ -10,7 +10,7 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
+  
   <tbody>
     <% @jobs.each do |job| %>
       <tr style="height: 60px; margin:5px; border-radius: 10px;">
@@ -20,11 +20,8 @@
         <td><button> <%= link_to 'Apply Now', job %> </button></td>
         <td><%= link_to 'Edit', edit_job_path(job) %></td>
         <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-		<tr> <%= render @job.japps %><tr> 
   
       </tr>
     <% end %>
   </tbody>
 </table>
-<% else %> 
-	<%end %> 

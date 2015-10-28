@@ -1,9 +1,9 @@
  
 
  <%= form_tag(posts_path, :method => "get") do %>
- <div class="input-append" style="width: 75%">
+ <div class="post_wrapper" >
       <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-      <button class="btn" type="submit ">Search </button>
+      <button type="submit "> Search </button>
     </div>
   <% end %>
   <%= yield %>
@@ -26,9 +26,14 @@
 		</td> 
 		<td style="width: 10em; height: 10em">
 		<h2 class="image"><%= link_to (image_tag post.image.url(:medium)),post %></h2>
+				<% if current_user.likes?(post) %> 
+				<button> <%= link_to 'unlike', likes_path(post) %></button>
+				<% else %> 
+				<button> <%= link_to 'like', likes_path(post) %></button>
+
+					<% end %> 
 		</td>
 		<p class="data"><%= post.created_at.strftime("%B, %d, %Y") %></p>
-		<button> <%= link_to 'like', likes_path(post) %></button>
 	</table>
 
 	

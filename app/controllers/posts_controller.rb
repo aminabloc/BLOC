@@ -61,9 +61,10 @@ class PostsController < ApplicationController
 	def likes
 		@user = current_user # before_action :authenticate_user, only: [:likes]
   		@post = Post.find(params[:id])
-  		@user.like!(@post)
-  		redirect_to :back, notice: "Liked this post successfully!"
+  		@user.toggle_like!(@post)
+  		redirect_to :back
 		end
+
 
 
 	private
