@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151028171722) do
+ActiveRecord::Schema.define(version: 20151028200150) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "name"
@@ -68,6 +68,8 @@ ActiveRecord::Schema.define(version: 20151028171722) do
     t.datetime "updated_at", null: false
     t.integer  "job_id"
     t.string   "name"
+    t.string   "stage"
+    t.string   "student"
   end
 
   add_index "japps", ["job_id"], name: "index_japps_on_job_id"

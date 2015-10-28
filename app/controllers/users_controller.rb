@@ -1,10 +1,9 @@
 class UsersController < ApplicationController
-	before_filter :check_role
 
 	
 
 		  def index
-		  	
+		 
 
 			if params[:search]
       			@users = User.search(params[:search])
@@ -15,7 +14,7 @@ class UsersController < ApplicationController
 			      format.xml  { render :xml => @users }
 		    end
 		  end
-		  
+
 		end
 
 	

@@ -1,6 +1,5 @@
 class JappsController < ApplicationController
   def index
-    @job = Job.find(params[:job_id])  
     @japps= @job.japps.all
   end
 
@@ -11,12 +10,12 @@ class JappsController < ApplicationController
   
   def show
     @job = Job.find(params[:job_id])
+    
   end
 
   def create
     @job = Job.find(params[:job_id])
-    @japp = @job.japps.create(params[:japp].permit(:statement, :resume, :cover))
-
+    @japp = @job.japps.create(params[:japp].permit(:statement, :resume, :cover ,:student, :major, :geo, :experience))
     redirect_to job_path(@job)
   end
 

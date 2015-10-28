@@ -1,7 +1,9 @@
 <div class="comment clearfix">
+
 	<div class="post_wrapper">
+	
 		<h3 class="comment_body"> Applicant Name </h3>
-		<p class="comment_body"><%= japp.name %></p>
+		<p class="comment_body"><%= japp.student  %></p>
 
 		<h3 class="comment_body"> Cover Letter </h3>
 		<p class="comment_body"><%= japp.cover %></p>
@@ -9,9 +11,28 @@
 		<h3 class="comment_body"> Resume </h3>
 		<p class="comment_body"><%= japp.resume %></p>
 
+		
+		
+
+
 		<p class="comment_time">Submitted<%= time_ago_in_words(japp.created_at) %> ago</p>
 
-		
+<%=  form_for([@job, @job.japps.build], html: { multipart: true }) do |f| %>
+
+  <div class="field">
+    <%= f.label :stage %><br>
+    <%= f.radio_button :stage, 'applied' , :checked => :stage == 'Applied' %> Applied
+	<%= f.radio_button :stage, 'called'  %> Call Back
+	<%= f.radio_button :stage, 'interviewed'  %> <span> Interviewing </span>
+	<%= f.radio_button :stage, 'rejected' %> <span> Rejected </span>
+	<%= f.radio_button :stage, 'offered' %> <span> Offered </span>
+	<%= f.radio_button :stage, 'Hired'  %> <span> Hired </span>
+
+  </div>
+
+
+<% end %>
+
 	
 	
 	<% if user_signed_in? %>

@@ -23,7 +23,12 @@ end
   get 'post/:id/likes', to: 'posts#likes', as: :likes
   get 'job/:id/saves', to: 'jobs#saves', as: :saves
 
+
+
+
+
   get '/myjobs', to: 'jobs#myjobs', as: :myjobs
+  get 'post/:id/repost', to: 'postss#reposts', as: :reposts
 
 
  root "passthrough#index"

@@ -1,10 +1,14 @@
 <%=  form_for([@job, @job.japps.build], html: { multipart: true }) do |f| %>
  
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
+  
+    <%= f.hidden_field :student , :value => current_user.name%>
+    <%= f.hidden_field :major , :value => current_user.major%>
+    <%= f.hidden_field :geo , :value => current_user.geo%>
+    <%= f.hidden_field :experience , :value => current_user.experience%>
+
+
+
   <div class="field">
     <%= f.label :resume %><br>
     <%= f.text_area :resume %>

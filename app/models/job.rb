@@ -10,4 +10,7 @@ class Job < ActiveRecord::Base
 	has_many :japps
 
 	acts_as_likeable
+
+	  ROLES= %w[applied call interviewed offered rejected hired]
+
 end
