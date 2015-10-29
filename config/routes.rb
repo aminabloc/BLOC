@@ -30,6 +30,11 @@ end
   get '/myjobs', to: 'jobs#myjobs', as: :myjobs
   get '/liked', to: 'posts#liked', as: :liked_posts
 
+#home page routes
+  get '/home/student', to: 'passthrough#studenthome', as: :student_home
+  get '/home/company', to: 'passthrough#companyhome', as: :company_home
+
+
   get 'post/:id/repost', to: 'postss#reposts', as: :reposts
 
 
