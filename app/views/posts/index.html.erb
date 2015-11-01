@@ -8,6 +8,7 @@
   <% end %>
   <%= yield %>
 
+<div id="spacer"> </div>
 <% @posts.each do |post| %>
 	<div class="post_wrapper">
 		<%if post.user.name == current_user.name %>
@@ -16,7 +17,7 @@
 				<h2 class ="user"><%= link_to post.user.name , post.user %>
 		<%end %>
 		<table id="table_id" style= "width: 800px; margin: 0px;" > 
-		<td style="width: 100px"> 
+		<td style="width: 150px"> 
 			<div class="image"><%= link_to (image_tag post.user.image.url(:small)),post.user %></div>
 		</td>
 
@@ -30,11 +31,14 @@
 				<button> <%= link_to 'unlike', likes_path(post) %></button>
 				<% else %> 
 				<button> <%= link_to 'like', likes_path(post) %></button>
-
 					<% end %> 
 		</td>
+	
+   		
 		<p class="data"><%= post.created_at.strftime("%B, %d, %Y") %></p>
 	</table>
+
+
 
 	
 	</div>

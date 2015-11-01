@@ -1,3 +1,6 @@
+<div style="height: 70px"> </div>
+
+ <div class="post_wrapper">
 <p id="notice" class="job" ><%= notice %></p>
 
 <div id="job_wrapper">
@@ -20,9 +23,12 @@
   <strong>Text:</strong>
   <%= @job.text %>
 </p>
+</div>
 
 <% if current_user == @job.user %>
+<%= @job.japps.count %> Applications
 <%= render @job.japps %>
+
 <% else %> 
 <div id="comments">
 	<!-- counter for how many have applied --> 

@@ -39,14 +39,12 @@
 		<div "side-menu cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right">
 		<ul>
 			<li class="bloc" style="color:white; font-size: 1.5em; padding: 1em 0em"> BLOC </li>
-			<li class="category">Websites</li>
 			<li><%= link_to "Bloc", root_path %></li>
 			<li><%= link_to "About", about_path %></li>
 		</ul>
 
 
 		<ul>
-			<li class="category">Social</li>
 			<li><a href="https://ourbloc.co">Our Bloc</a></li>
 			<li><a href="mailto:kope@ourbloc.co">Email</a></li>
 			<% if user_signed_in? %>
@@ -59,20 +57,16 @@
 	</div>
 </div>
 
-<div id="sidebar" style="float:right">
+<div id="sidebar" style="float:left">
+	<div id="spacer"> </div>
+		<div id="spacer"> </div>
+
 		<div "side-menu cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right">
 		<ul>
-			<li class="bloc" style="color:white; font-size: 1.5em; padding: 1em 0em"> BLOC </li>
-			<li class="category">Websites</li>
+			<li class="bloc" style="color:white; font-size: 2em; padding: 1em 0em"> BLOC </li>
 			<li><%= link_to "Bloc", root_path %></li>
-			<li><%= link_to "About", about_path %></li>
-		</ul>
-
-
-		<ul>
-			<li class="category">Social</li>
-			<li><a href="https://ourbloc.co">Our Bloc</a></li>
-			<li><a href="mailto:kope@ourbloc.co">Email</a></li>
+			<li><%= link_to "About Us ", about_path %></li>
+			<li><a href="mailto:info@ourbloc.co">Contact US</a></li>
 			<% if user_signed_in? %>
 				<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
 			<% end %>
@@ -108,7 +102,7 @@
 	<div id="main_content">
 		
 		<!-- nav bar --> 
-		<div class="navbar navbar-fixed-top" id="header" style="height: 7%">
+		<div class="navbar navbar-fixed-top" id="header" style="height: 8%">
 			<!-- responsive nav bar -->
 			<div class="container">
 			<div class="nav-collapse collapse navbard-responsive-collapse">
@@ -118,14 +112,29 @@
 			<div><p style="font-size: 1.5em; font-weight:100; text-transform: uppercase "><%= link_to "BLOC", root_path %></p> 
 
 
-				<% if user_signed_in? %>
+		<% if user_signed_in? %>
+			<button class="button" style="float:right; text-transform:uppercase"><%= link_to "Logout", destroy_user_session_path, method: :delete %></button>
+
 			<button class="button" id="hide" style="float:right; text-transform:uppercase"><%= link_to "Edit Profile", edit_user_registration_path %></button>
 	      
-	        <button class="button" id="hide" style=" float:right; text-transform:uppercase"><%= link_to "New Post", new_post_path %></button>
+	        
 	        
 			<button class="button" id="hide" style="float:right; text-transform:uppercase"><%= link_to "Network", users_path %></button>
+			
+
+			<%if current_user.role=="student" %>
 			<button class="button" style="float:right; text-transform:uppercase"><%= link_to "All Posts", posts_path %></li> 
+			<button class="button" id="hide" style=" float:right; text-transform:uppercase"><%= link_to "New Post", new_post_path %></button>
+			<%end %>
+
+			<% if current_user.role=="company" %> 
+			<button class="button" style="float:right; text-transform:uppercase"><%= link_to "New Job", new_job_path %></li> 
+			<button class="button" style="float:right; text-transform:uppercase"><%= link_to "My Jobs", myjobs_path %></li> 
+				<%end %> 
 			<button class="button" style="float:right; text-transform:uppercase"><%= link_to "All Jobs", jobs_path %></li> 
+
+
+			
 
 
 
@@ -155,7 +164,7 @@
 
 
 
-        <div id="footer"> </div>
+        <div id= "footer"> </div>
 
 </body>
 </html>

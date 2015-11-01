@@ -80,7 +80,7 @@ class JobsController < ApplicationController
 
 
   def myjobs
-    @jobs = current_user.jobs
+    @jobs = current_user.jobs.order('created_at DESC')
   end
 
   private

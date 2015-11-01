@@ -51,6 +51,10 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 	end
 
+	def companies 
+		@users = Users.all 
+	end
+
 	def edit
 		@user = User.find(params[:id])
 	end

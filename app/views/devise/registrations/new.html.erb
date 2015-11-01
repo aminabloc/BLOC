@@ -1,16 +1,17 @@
 
- <section id="background-img" class="inner-intro bg-img2 overlay-light parallax parallax-background2">
+ <section style="position:fixed;" id="background-img" class="inner-intro bg-img2 overlay-light parallax parallax-background2">
             <div class="container" >
                 <div class="row title">
-                    <h2 class="h2" style="font-weight:600;color:black;font-size:2.5em; margin-top:5em">BLOC</h2>
-                    <div style="font:2em" class="page-breadcrumb">
-                        <a href="/users.html">Search Students</a>/<a href="/mailbox/inbox.html"> Inbox</a> /<a href="/posts.html">New Applications</span>
-                    </div>
+                    <h2 class="h2" style="font-weight:600;color:black;font-size:2.5em; margin-top:5em"></h2>
+      
                 </div>
             </div>
         </section>
         <div class="clearfix"></div>
 
+
+
+<div id="page_wrapper" style="margin-left: 60%; background-color:#f5f5f5; height: 800px">
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -74,5 +75,4 @@
 
 <%= render "devise/shared/links" %>
 
-
-<p> <% link_to "Corporate Sign Up", corporatesignup_path %> </p>
+</div>
