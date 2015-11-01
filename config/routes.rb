@@ -6,8 +6,6 @@ Rails.application.routes.draw do
 resources :users do
 end
 
-  resources :studenthome
-  resources :companyhome
 
   resources :jobs do
     resources :japps 
@@ -52,7 +50,6 @@ get '/allcompanies', to: 'users#companies', as: :companies_listed
 
 
   devise_scope :user do
-   get "/corporatesignup" => "devise/registrations#company"
 end
 
   resources :conversations do
