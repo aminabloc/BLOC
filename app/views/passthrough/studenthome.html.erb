@@ -1,9 +1,25 @@
     <section id="background-img" class="inner-intro bg-img2 overlay-light parallax parallax-background2">
             <div class="container" >
                 <div class="row title">
-                    <h2 class="h2" style="font-weight:600;color:black;font-size:2.5em; margin-top:5em">Black Collegiate Excellence</h2>
+                    <h2 class="h2" style="font-weight:800;color:white;font-size:2.5em; margin-top:5em">Black Collegiate Excellence</h2>
+
+                    <% if current_user.role=="student" %> 
                     <div style="height: 10%" class="page-breadcrumb">
                         <a href="/users.html">Network</a>/<a href="/mailbox/inbox.html"> Inbox</a> /<a href="/posts.html">All Posts</span>
+
+                    <% elsif current_user.role=="company" %> 
+                   
+  
+                    
+                         <%= form_tag(users_path, :method => "get") do %>
+
+      <%= text_field_tag :search, params[:search], placeholder: "Search Network" %>
+  <% end %>
+<%= yield %>
+<div style="height: 10%" class="page-breadcrumb">
+<a href="/mailbox/inbox.html"> Inbox</a> /<a href="/myjobs.html">My Jobs</span>
+
+                    <% end %> 
                     </div>
                 </div>
             </div>

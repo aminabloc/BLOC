@@ -51,9 +51,7 @@ get '/allcompanies', to: 'users#companies', as: :companies_listed
 
 
 
-  devise_scope :user do
-   get "/corporatesignup" => "devise/registrations#company"
-end
+
 
   resources :conversations do
     member do
