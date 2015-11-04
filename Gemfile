@@ -28,6 +28,7 @@ gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'mailboxer'
 gem 'simple_hashtag'
 gem 'acts-as-taggable-on'
+gem 'acts_as_votable', '~> 0.10.0'
 
 gem 'jquery-turbolinks'
 

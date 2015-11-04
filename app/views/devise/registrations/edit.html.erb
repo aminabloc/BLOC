@@ -4,11 +4,15 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-
  <div class="form-group">
-   
+    <% if current_user.role == "student" %>
+    <p> Profile Image </p>
+    <%elsif current_user.role == "company" %>
+      <p> Company Logo </p>
+      <% end %> 
       <%= f.file_field :image %>
   </div>
+
 
   <div class="form-group">
       <%= f.label :name %>
@@ -26,11 +30,8 @@
     <%= f.email_field :role, autofocus: true, class: "edit-wrapper"%>
   </div>
 
-   <div class="field">
-    <%= f.label :company %><br />
-    <%= f.email_field :company, autofocus: true, class: "edit-wrapper"%>
-  </div>
 
+<% if current_user.role != "company" %> 
  <h2> Education </h2>
   <div class="form-group">
       <%= f.label :school %>
@@ -93,6 +94,33 @@
       <%= f.file_field :resume, class: "edit-wrapper" %>
   </div>
 
+  
+
+<%elsif current_user.role=="company" %> 
+     <div class="field">
+      <%= f.label :company %><br />
+      <%= f.text_field :company, autofocus: true, class: "edit-wrapper"%>
+    </div>
+
+    <div class="field">
+        <%= f.label :mission %><br />
+        <%= f.text_area :mission, autofocus: true, class: "edit-wrapper"%>
+      </div>
+
+    <div class="field">
+      <%= f.label :industry %><br />
+      <%= f.text_field :mission, autofocus: true, class: "edit-wrapper"%>
+    </div>
+
+    <div class="field">
+        <%= f.label :geo %><br />
+        <%= f.text_field :geo, autofocus: true, class: "edit-wrapper"%>
+      </div>
+
+
+   
+
+  <% end %> 
 
 
 

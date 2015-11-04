@@ -9,8 +9,19 @@ class PostsController < ApplicationController
 		      elsif params[:hashtag]
 		        @posts = Post.tagged_with(params[:hashtag]).order('created_at DESC')
 		      else
- 				@posts = Post.all
+ 				@posts = Post.all.includes(:comments)
 
+      end
+    end
+	
+
+	def liked
+		 unless user_signed_in?
+		    redirect_to new_user_session_path
+		  else
+		  		@user= current_user
+ 				@posts = Post.all
+ 				@liked = User.followees(Post)
       end
     end
 	end

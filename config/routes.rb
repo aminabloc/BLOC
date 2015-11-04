@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :companies
   devise_for :users
   
   
@@ -28,7 +27,17 @@ end
 
 
   get '/myjobs', to: 'jobs#myjobs', as: :myjobs
-  get 'post/:id/repost', to: 'postss#reposts', as: :reposts
+  get '/liked', to: 'posts#liked', as: :liked_posts
+
+#home page routes
+  get '/home/student', to: 'passthrough#studenthome', as: :student_home
+  get '/home/company', to: 'passthrough#companyhome', as: :company_home
+
+#index page for all company users
+get '/allcompanies', to: 'users#companies', as: :companies_listed
+
+
+  get 'post/:id/repost', to: 'posts#reposts', as: :reposts
 
 
  root "passthrough#index"
@@ -42,9 +51,7 @@ end
 
 
 
-  devise_scope :user do
-   get "/corporatesignup" => "devise/registrations#company"
-end
+
 
   resources :conversations do
     member do

@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) << :links
     devise_parameter_sanitizer.for(:account_update) << :threeskills
     devise_parameter_sanitizer.for(:account_update) << :phone
-    devise_parameter_sanitizer.for(:account_update) << :testimonial
+    devise_parameter_sanitizer.for(:account_update) << :testimonial_one
     devise_parameter_sanitizer.for(:account_update) << :geo
     devise_parameter_sanitizer.for(:account_update) << :hometown
     devise_parameter_sanitizer.for(:account_update) << :company
@@ -73,12 +73,13 @@ end
     @devise_mapping ||= Devise.mappings[:user]
   end
 
-end
+
 
  private
   # Overwriting the sign_out redirect path method
   def after_sign_out_path_for(user)
-    new_session_path
+    new_user_session_path
   end
 
+end
 

@@ -21,21 +21,6 @@
 
 
 
-	<!-- Intro Section -->
-        <section id="background-img" class="inner-intro bg-img2 overlay-light parallax parallax-background2">
-            <div class="container" >
-                <div class="row title">
-                    <h2 class="h2" style="font-weight:600;color:black;font-size:2.5em; margin-top:5em">Black Collegiate Excellence</h2>
-                    <div style="font:2em" class="page-breadcrumb">
-                        <a href="/users.html">Network</a>/<a href="/mailbox/inbox.html"> Inbox</a> /<a href="/posts.html">All Posts</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <div class="clearfix"></div>
-        <!-- End Intro Section -->
-
-
 
 
         
@@ -54,14 +39,12 @@
 		<div "side-menu cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right">
 		<ul>
 			<li class="bloc" style="color:white; font-size: 1.5em; padding: 1em 0em"> BLOC </li>
-			<li class="category">Websites</li>
 			<li><%= link_to "Bloc", root_path %></li>
 			<li><%= link_to "About", about_path %></li>
 		</ul>
 
 
 		<ul>
-			<li class="category">Social</li>
 			<li><a href="https://ourbloc.co">Our Bloc</a></li>
 			<li><a href="mailto:kope@ourbloc.co">Email</a></li>
 			<% if user_signed_in? %>
@@ -74,20 +57,16 @@
 	</div>
 </div>
 
-<div id="sidebar" style="float:right">
+<div id="sidebar" style="float:left">
+	<div id="spacer"> </div>
+		<div id="spacer"> </div>
+
 		<div "side-menu cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right">
 		<ul>
-			<li class="bloc" style="color:white; font-size: 1.5em; padding: 1em 0em"> BLOC </li>
-			<li class="category">Websites</li>
+			<li class="bloc" style="color:white; font-size: 2em; padding: 1em 0em"> BLOC </li>
 			<li><%= link_to "Bloc", root_path %></li>
-			<li><%= link_to "About", about_path %></li>
-		</ul>
-
-
-		<ul>
-			<li class="category">Social</li>
-			<li><a href="https://ourbloc.co">Our Bloc</a></li>
-			<li><a href="mailto:kope@ourbloc.co">Email</a></li>
+			<li><%= link_to "About Us ", about_path %></li>
+			<li><a href="mailto:info@ourbloc.co">Contact US</a></li>
 			<% if user_signed_in? %>
 				<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
 			<% end %>
@@ -123,7 +102,7 @@
 	<div id="main_content">
 		
 		<!-- nav bar --> 
-		<div class="navbar navbar-fixed-top" id="header">
+		<div class="navbar navbar-fixed-top" id="header" style="height: 8%">
 			<!-- responsive nav bar -->
 			<div class="container">
 			<div class="nav-collapse collapse navbard-responsive-collapse">
@@ -133,14 +112,29 @@
 			<div><p style="font-size: 1.5em; font-weight:100; text-transform: uppercase "><%= link_to "BLOC", root_path %></p> 
 
 
-				<% if user_signed_in? %>
+		<% if user_signed_in? %>
+			<button class="button" style="float:right; text-transform:uppercase"><%= link_to "Logout", destroy_user_session_path, method: :delete %></button>
+
 			<button class="button" id="hide" style="float:right; text-transform:uppercase"><%= link_to "Edit Profile", edit_user_registration_path %></button>
 	      
-	        <button class="button" id="hide" style=" float:right; text-transform:uppercase"><%= link_to "New Post", new_post_path %></button>
+	        
 	        
 			<button class="button" id="hide" style="float:right; text-transform:uppercase"><%= link_to "Network", users_path %></button>
+			
+
+			<%if current_user.role=="student" %>
 			<button class="button" style="float:right; text-transform:uppercase"><%= link_to "All Posts", posts_path %></li> 
+			<button class="button" id="hide" style=" float:right; text-transform:uppercase"><%= link_to "New Post", new_post_path %></button>
+			<%end %>
+
+			<% if current_user.role=="company" %> 
+			<button class="button" style="float:right; text-transform:uppercase"><%= link_to "New Job", new_job_path %></li> 
+			<button class="button" style="float:right; text-transform:uppercase"><%= link_to "My Jobs", myjobs_path %></li> 
+				<%end %> 
 			<button class="button" style="float:right; text-transform:uppercase"><%= link_to "All Jobs", jobs_path %></li> 
+
+
+			
 
 
 
@@ -159,6 +153,8 @@
 
 
 
+
+
 		<% flash.each do |name, msg| %>
 			<%= content_tag(:div, msg, class: "alert") %>
 		<% end %>
@@ -168,7 +164,7 @@
 
 
 
-
+        <div id= "footer"> </div>
 
 </body>
 </html>

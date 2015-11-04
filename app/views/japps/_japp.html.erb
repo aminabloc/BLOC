@@ -1,7 +1,6 @@
 <div class="comment clearfix">
 
-	<div class="post_wrapper">
-	
+	<div style="border-top: 5px solid #f5f5f5"> 
 		<h3 class="comment_body"> Applicant Name </h3>
 		<p class="comment_body"><%= japp.student  %></p>
 
@@ -20,7 +19,6 @@
 <%=  form_for([@job, @job.japps.build], html: { multipart: true }) do |f| %>
 
   <div class="field">
-    <%= f.label :stage %><br>
     <%= f.radio_button :stage, 'applied' , :checked => :stage == 'Applied' %> Applied
 	<%= f.radio_button :stage, 'called'  %> Call Back
 	<%= f.radio_button :stage, 'interviewed'  %> <span> Interviewing </span>
@@ -32,11 +30,12 @@
 
 
 <% end %>
+	<%= link_to "Read More", @japp_path %> 
 
 	
 	
 	<% if user_signed_in? %>
-		<p><%= link_to 'Delete', [japp.job, japp], 
+		<p style="font-weight: 500"><%= link_to 'Delete', [japp.job, japp], 
 									method: :delete, 
 									class: "button", 
 									data: { confirm: 'Are you sure?' } %></p>

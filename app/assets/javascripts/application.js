@@ -33,6 +33,5 @@ $(document).ready(function() {
     $(".toggle-signup").click(function(event){
         $('#student-login').hide();
        $('#company-login').show();
-       
     });
 });

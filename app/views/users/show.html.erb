@@ -1,5 +1,5 @@
-<div >
-
+<div  id = "spacer"> </div>
+<% if @user.role=="student" %> 
 <table style="margin: 2%;	">
 	<td>
 	<h2 >
@@ -19,7 +19,7 @@
 </table> 
 <h3> Major </h3>
 <p><%= @user.major %></p>
-
+g
 <h3> Organizations </h3>
 <p><%= @user.orgs %></p>
 
@@ -36,3 +36,22 @@
 <h3> <%= link_to "Download Resume" , @user.resume.url %> </h3>
 	
 </div> 
+
+<%elsif @user.role=="company" %> 
+<td>
+	<h2 >
+			<%= image_tag @user.image.url(:small)%>
+		</p>
+	<h2 >
+		</td>
+
+	<td>
+			<h3> <%= @user.company %> </h3>
+			<h3> Industry</h3>
+				<p> <%= @user.industry %> </p>
+			<h3> Locations </h3>
+				<p><%= @user.geo %></p>
+			
+	</td> 
+</table> 
+<%end %> 

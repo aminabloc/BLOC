@@ -535,7 +535,7 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 
 button, input, textarea, select {
     font-family: 'Raleway', sans-serif;
-    font-size: 12px;
+    font-size: 13px;
 }
 
     input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="password"], input[type="checkbox"], textarea, select {
@@ -548,7 +548,7 @@ button, input, textarea, select {
         outline: none;
         font-weight: 400;
         letter-spacing: 1px;
-        font-size: 13px;
+        font-size: 12px;
         padding: 10px 15px;
         transition: all 0.2s ease 0s;
         -moz-transition: all 0.2s ease 0s;
@@ -563,7 +563,7 @@ button, input, textarea, select {
         }
 
 input, textarea, select {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-family: 'Raleway', sans-serif;
     font-size: 12px;
 }
@@ -573,7 +573,7 @@ input, textarea, select {
     }
 
 textarea {
-    height: 120px;
+    height: 100px;
 }
 
 label {
@@ -587,11 +587,11 @@ label {
 }
 
 .form-full {
-    width: 100%;
+    width: 80%;
 }
 
 .form-field-wrapper {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
     .form-field-wrapper input, .form-field-wrapper textarea, .form-field-wrapper select {
@@ -2165,7 +2165,7 @@ header.sticky .navigation a.current-ele {
     padding: 4px 8px;
     display: inline-block;
     color: #323232;
-    font-size: 12px;
+    font-size: 16px;
     text-transform: uppercase;
     letter-spacing: 3px;
     border-radius: 3px;
