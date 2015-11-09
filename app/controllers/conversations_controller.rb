@@ -9,7 +9,7 @@ class ConversationsController < ApplicationController
 		recipients = User.where(id: conversation_params[:recipients])
 		conversation = current_user.send_message(recipients, conversation_params[:body], conversation_params[:subject]).conversation
 		flash[:success] = "Your message was successfully sent!"
-		redirect_to conversation_path(conversation)
+		redirect_to mailbox_sent_path
   end
 
   def reply
