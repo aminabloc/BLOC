@@ -1,9 +1,9 @@
 <div id="spacer"> </div>
 <div id="job_background">
 <p id="notice"><%= notice %></p>
-<%= form_tag(posts_path, :method => "get") do %>
+<%= form_tag(jobs_path, :method => "get") do %>
  <div class="search_bar_wrapper" style= "position:fixed" >
-      <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Jobs" %>
       <button style="display:none" type="submit "> Search </button>
 </div>
   <% end %>
