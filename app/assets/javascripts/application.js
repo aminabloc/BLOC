@@ -30,7 +30,11 @@ $(document).ready( function () {
 } );
 
 $(document).ready(function() {
-    $(".toggle-signup").click(function(event){
+    $(".toggle-student").click(function(event){
+        $('#student-login').show();
+       $('#company-login').hide();
+    });
+    $(".toggle-company").click(function(event){
         $('#student-login').hide();
        $('#company-login').show();
     });
