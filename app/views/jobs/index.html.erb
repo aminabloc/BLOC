@@ -32,7 +32,7 @@
       <tr style="background-color: white; border: 5px solid #f5f5f5">
         <td><%= link_to job.user.company, jobs_path(@user)%></td>
         <td><%= link_to job.title, job %></td>
-        <td><%= job.deadline[13] %><%=job.deadline[14] %>/ <%=job.deadline[20]%><%=job.deadline[21] %></td>
+        <td><%= job.deadline  %></td>
         <td><%= job.description %></td>
         <% if current_user.role=="Student" %> 
         <td><button> <%= link_to 'Apply Now', job %> </button></td>
