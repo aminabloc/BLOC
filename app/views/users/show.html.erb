@@ -1,6 +1,8 @@
 <div style="height:100px"> </div>
 <% if @user.role=="student" %> 
-<table style="margin: 2%;	">
+
+<div class="post_wrapper" style="padding: 70px">
+<table>
 	<td>
 	<h2 >
 			<%= image_tag @user.image.url(:small)%>
@@ -9,7 +11,7 @@
 		</td>
 
 	<td>
-			<h3> <%= @user.name %> </h3>
+			<h2> <%= @user.name %> </h3>
 			<h3> Graduation Year </h3>
 				<p> <%= @user.gradyear %> </p>
 			<h3> College/University </h3>
@@ -47,11 +49,10 @@ g
 
 	<td>
 			<h3> <%= @user.company %> </h3>
-			<h3> Industry</h3>
-				<p> <%= @user.industry %> </p>
 			<h3> Locations </h3>
 				<p><%= @user.geo %></p>
 			
 	</td> 
 </table> 
 <%end %> 
+</div>

@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :detect_browser
 
   helper_method :mailbox, :conversation
 
@@ -15,7 +16,7 @@ class ApplicationController < ActionController::Base
     @mailbox ||= current_user.mailbox
   end  
 
-  def conversation
+  def conversationap
     @conversation ||= mailbox.conversations.find(params[:id])
   end
 
@@ -79,6 +80,24 @@ end
   # Overwriting the sign_out redirect path method
   def after_sign_out_path_for(user)
     new_user_session_path
+  end
+
+  private 
+    def detect_browser
+      case request.user_agent
+        when /iPad/i
+          request.variant = :tablet
+        when /iPhone/i
+          request.variant = :phone
+        when /Android/i && /mobile/i
+          request.variant = :phone
+        when /Android/i
+          request.variant = :tablet
+        when /Windows Phone/i
+          request.variant = :phone
+        else
+          request.variant = :desktop
+      end
   end
 
 end

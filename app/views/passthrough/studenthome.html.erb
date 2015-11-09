@@ -11,9 +11,9 @@
                    
   
                     
-                         <%= form_tag(users_path, :method => "get") do %>
+                     <%= form_tag(users_path, :method  => "get") do %> 
 
-      <%= text_field_tag :search, params[:search], placeholder: "Search Network" %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Network" , class: "search_users" %>
   <% end %>
 <%= yield %>
 <div style="height: 10%" class="page-breadcrumb">
