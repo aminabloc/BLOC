@@ -5,7 +5,11 @@
 <table>
 	<td>
 	<h2 >
+			<% if @user.image.url != nil %>
 			<%= image_tag @user.image.url(:small)%>
+			<% else %> 
+			
+				<% end %> 
 		</p>
 	<h2 >
 		</td>
@@ -40,19 +44,28 @@ g
 </div> 
 
 <%elsif @user.role=="company" %> 
+<div id="post_wrapper" style="padding: 70px" =>
+	<table>
 <td>
-	<h2 >
+	<h3 >
+			<% if @user.image.url != nil %>
 			<%= image_tag @user.image.url(:small)%>
+			<% else %> 
+			
+				<% end %> 
 		</p>
-	<h2 >
+	<h3 >
 		</td>
 
 	<td>
-			<h3> <%= @user.company %> </h3>
+			<h2> <%= @user.company %> </h2>
 			<h3> Locations </h3>
 				<p><%= @user.geo %></p>
+			<h3> Mission </h3>
+				<p><%= @user.mission %></p>
 			
 	</td> 
 </table> 
 <%end %> 
+</div>
 </div>
