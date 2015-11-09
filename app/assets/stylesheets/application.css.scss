@@ -109,7 +109,7 @@ a {
 	color: black;
 	border: 0px solid #D4AF37;
 	padding: .2em .8em;
-	border-radius: 1.5em;
+	border-radius: 1em;
 	&:hover {
 		border: 0px solid #D4AF37;
 			font-weight: 100;
@@ -289,6 +289,9 @@ a {
 	}
 	textarea {
 		min-height: 180px;
+	}
+	input[type="placeholder"] {
+		font-family: "Raleway";
 	}
 	input[type="submit"] {
 		outline: none;
