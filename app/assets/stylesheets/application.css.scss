@@ -14,7 +14,6 @@
  *= require_self
  */
 
- @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "jquery-ui";
 @import "style";
@@ -278,15 +277,15 @@ a {
 		margin: 2em 0;
 	}
 	input[type="text"], input[type="email"], input[type="password"], textarea {
-		width: 90%;
+		width: 60%;
 		border: 1px solid #d6dce0;
-		border-radius: .35em;
+		border-radius: .4em;
 		margin-top: 10px;
-		padding: .5em 1em;
+		padding: .3em .7em;
 		line-height: 1.75;
 	}
 	input[type="text"] {
-		height: 35px;
+		height: 28px;
 	}
 	textarea {
 		min-height: 180px;

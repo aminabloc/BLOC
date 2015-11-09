@@ -1,4 +1,7 @@
-﻿@import url("navigation.css");
+﻿
+
+
+@import url("navigation.css");
 @import url("./plugin/flexslider.css");
 @import url("./plugin/owl.carousel.css");
 @import url("./plugin/mediaelementplayer.css");
@@ -523,99 +526,7 @@ button {
 
 /*Form Style   ||-----------*/
 
-button {
-    outline: none;
-    border: none;
-}
 
-button, html input[type="button"], input[type="reset"], input[type="submit"] {
-    cursor: pointer;
-    display: inline-block;
-}
-
-button, input, textarea, select {
-    font-family: 'Raleway', sans-serif;
-    font-size: 13px;
-}
-
-    input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="password"], input[type="checkbox"], textarea, select {
-        appearance: none;
-        -webkit-appearance: none;
-        border: 1px solid #ddd;
-        -webkit-border-radius: 0px;
-        border-radius: 0px;
-        color: #888;
-        outline: none;
-        font-weight: 400;
-        letter-spacing: 1px;
-        font-size: 12px;
-        padding: 10px 15px;
-        transition: all 0.2s ease 0s;
-        -moz-transition: all 0.2s ease 0s;
-        -webkit-transition: all 0.2s ease 0s;
-        -o-transition: all 0.2s ease 0s;
-        display: inline-block;
-    }
-
-        input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="number"]:focus, input[type="checkbox"]:focus, input[type="password"]:focus, textarea:focus {
-            border-color: #e6ae49;
-            color: #323232;
-        }
-
-input, textarea, select {
-    margin-bottom: 10px;
-    font-family: 'Raleway', sans-serif;
-    font-size: 12px;
-}
-
-    input.input-sm, .input-sm {
-        padding: 8px 15px;
-    }
-
-textarea {
-    height: 100px;
-}
-
-label {
-    color: #323232;
-    font-size: 13px;
-    margin-bottom: 10px;
-    padding-right: 3px;
-    margin-top: 6px;
-    font-weight: 600;
-    font-family: 'Raleway', sans-serif;
-}
-
-.form-full {
-    width: 80%;
-}
-
-.form-field-wrapper {
-    margin-bottom: 10px;
-}
-
-    .form-field-wrapper input, .form-field-wrapper textarea, .form-field-wrapper select {
-        margin-bottom: 0px;
-    }
-
-form .error {
-    border-color: #e1534f;
-}
-
-form label.error {
-    margin-bottom: 0px;
-    margin-top: 3px;
-    color: #e1534f;
-    font-size: 12px;
-    font-weight: 400;
-}
-
-.successContent, .errorContent {
-    margin-bottom: 20px;
-    display: none;
-    text-transform: none;
-    letter-spacing: 1px;
-}
 
 /* Spacer Style   ||-----------*/
 
