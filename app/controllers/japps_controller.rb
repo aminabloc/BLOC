@@ -5,7 +5,7 @@ class JappsController < ApplicationController
 
   def new
     @job = Job.find(params[:job_id])
-    @japp = jobs.japps.build
+    @japp = @job.japps.build
   end
   
   def show
@@ -15,7 +15,7 @@ class JappsController < ApplicationController
 
   def create
     @job = Job.find(params[:job_id])
-    @japp = @job.japps.create(params[:japp].permit(:statement, :resume, :cover ,:student, :major, :geo, :experience))
+    @japp = @job.japps.create(params[:japp].permit(:statement, :resume, :cover ,:student))
     redirect_to job_path(@job)
   end
 

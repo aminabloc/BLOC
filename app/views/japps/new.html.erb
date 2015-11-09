@@ -1,9 +1,10 @@
+<div style="height:100px"> </div>
 <h1>New Job Application</h1>
 
 <%= render 'form' %>
 
 
-<%= hidden_field_tag :jobtitle, japp.job.title %>
+<%= hidden_field_tag :jobtitle, @japp.job.title %>
 
-<%= link_to 'Back', japps_path %>
+<%= link_to 'Back', @japps_path %>
 

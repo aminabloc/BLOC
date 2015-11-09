@@ -34,17 +34,19 @@
         <td><%= link_to job.title, job %></td>
         <td><%= job.deadline  %></td>
         <td><%= job.description %></td>
+        
         <% if current_user.role=="Student" %> 
         <td><button> <%= link_to 'Apply Now', job %> </button></td>
 
         <% elsif current_user = job.user %> 
         <td><button> <%= link_to 'All Applications', job %> </button></td>
-        
+      <td><%= link_to 'Edit', edit_job_path(job) %></td>
+        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>        
+
         <%else %>
         <%end %> 
 
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
 
         <td> <button> <%= link_to 'save', saves_path(job) %></button>
         <% end %> </td>
