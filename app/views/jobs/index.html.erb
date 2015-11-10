@@ -35,7 +35,7 @@
         <td><%= job.deadline  %></td>
         <td><%= job.description %></td>
         
-        <% if current_user.role=="Student" %> 
+        <% if current_user.role=="student" %> 
         <td><button> <%= link_to 'Apply Now', job %> </button></td>
 
         <% elsif current_user = job.user %> 
