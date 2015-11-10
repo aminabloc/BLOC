@@ -5,11 +5,12 @@
 <table>
 	<td>
 	<h2 >
-			<% if @user.image.url != nil %>
-			<%= image_tag @user.image.url(:small)%>
+			<% if @user.image.url == nil %>
+			<div> </div>
 			<% else %> 
-			
-				<% end %> 
+			<%= image_tag @user.image.url(:small)%>
+
+			<% end %> 
 		</p>
 	<h2 >
 		</td>

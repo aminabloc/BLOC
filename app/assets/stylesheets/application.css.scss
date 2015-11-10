@@ -20,6 +20,8 @@
 @import "font-awesome";
 @import "pages";
 
+
+
  html, body {
 	font-family: 'Actor', sans-serif;
 }
@@ -33,12 +35,12 @@ a {
 	text-decoration: none;
 	color: grey;
 	&:hover {
-		background-color: white;
+		background-color: transparent;
 	}
 }
 
 #spacer {
-	height: 50px;
+	height: 60px;
 }
 
 .search_bar_wrapper {
@@ -258,11 +260,11 @@ a {
 		width: 60%;
 		border: 0;
 		background:white;
-		border-radius: .5em;
+		border-radius: 2px;
 		outline: none;
-		border-bottom: 1px solid #d6dce0;
-		margin-top: 10px;
-		padding: .3em .7em;
+		border-bottom: 2px solid #d6dce0;
+		margin-top: 5px;
+		padding: 0px;
 		line-height: 1.75;
 	}
 	input[type="text"] {
@@ -273,10 +275,11 @@ a {
 	}
 	input[type="placeholder"] {
 		font-family: "Raleway";
+		font-weight: 600px;
 	}
 	input[type="submit"] {
 		outline: none;
-		background: transparent;
+		background: white;
 		border: 1px solid #D4AF37;
 		padding: .5em 1.5em;
 		font-size: 1.1em;
@@ -310,9 +313,12 @@ td {
 
 #background-img {
 	background: url("http://www.ourbloc.co/uploads/2/4/0/1/24014742/8123404_orig.png") no-repeat center center fixed;
-	display: block;
-	margin-left: -25%;
-	height: 700px;
+	margin: 0 auto;
+	background-size: cover;
+	input[type="text"] {
+		color: white;
+	width: 100%;
+	}
 }
 
 #footer {
@@ -353,3 +359,5 @@ td {
 	margin-left: 5em;
 	width: 70%;
 }
+
+
