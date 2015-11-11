@@ -4,12 +4,12 @@ Rails.application.configure do
   # Code is not reloaded between requests.
 
 
-  config.paperclip_defaults = {
+ config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
-    :bucket => ENV['blocuploads'],
-    :access_key_id => ENV['AKIAIHS7CM6MWRYOYNDA'],
-    :secret_access_key => ENV['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']
+    :bucket => ENV['AWS_BUCKET'],
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   }
 }
   config.cache_classes = true
