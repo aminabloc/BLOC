@@ -39,7 +39,7 @@
 <p><%= @user.geo %></p>
 
 <% if current_user.role=="company" %> 
-<h4> <%= link_to "View Resume" , @user.resumelink %> </h4>
+<h4> <%= link_to "View Resume" , @user.hometown %> </h4>
 <h4> <%= link_to "Email" , @user.email %> </h4>
 	<%end %>
 </div> 
