@@ -12,10 +12,10 @@
 <% @users.each do |user| %>
 	<% if user.role =="student" %>
 
-		<table style="height: 10em; " class="post_wrapper">
-			<td>
+		<table style="height: 8em; " class="post_wrapper">
+			<td style="display:none">
 				<% if user.image.url != nil %>
-				<h2 class="image" style="margin:5%"><%= image_tag user.image.url(:small) %></h2>
+				<h2 class="image" style="margin:5%; display:none"><%= image_tag user.image.url(:small) %></h2>
 				<% else %> 
 				<% end %> 
 			</td>
@@ -24,9 +24,9 @@
 			<td>
 
 			<%if user.name == current_user.name %>
-				<h2 class="user"> Me </h2>
+				<h2 class="user" style="margin-left:20%;"> Me </h2>
 				<% else %>
-					<h2 class ="user"> <%= link_to user.name, user %>
+					<h2 class ="user" style="margin-left: 20%;"> <%= link_to user.name, user %>
 			<%end %>
 			</td>
 
