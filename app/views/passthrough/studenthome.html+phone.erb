@@ -4,9 +4,9 @@
 <div id="home_phone"> 
 <% if current_user.role=="student" %> 
     <div style="height: 10%" class="page-breadcrumb">
-    <button><a href="/users.html">Network</a> </button> <br />
-    <button><a href="/mailbox/inbox.html"> Inbox</a></button> <br />
-    <button><a href="/posts.html">All Posts</span></button> <br />
+    <a class= "hbutton" href="/users.html">Network</a> </button> 
+    <a class= "hbutton"href="/mailbox/inbox.html"> Inbox</a> <br />
+    <a class= "hbutton"href="/posts.html">All Posts</a> <br />
  
 
 <% elsif current_user.role=="company" %> 
@@ -17,8 +17,8 @@
          <% end %>
         <%= yield %>
     <div style="height: 10%" class="page-breadcrumb">
-    <button><a href="/mailbox/inbox.html"> Inbox</a> <br />
-    <button><a href="/myjobs.html">My Jobs</span></button> <br />
+   <a class= "hbutton"href="/mailbox/inbox.html"> Inbox</a> <br />
+    <a class= "hbutton"href="/myjobs.html">My Jobs</a> 
                    
   
  
