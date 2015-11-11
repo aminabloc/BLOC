@@ -1,6 +1,9 @@
 class ConversationsController < ApplicationController
 	before_action :authenticate_user!
-
+  
+  def index
+    @conversations = @mailbox.inbox.all
+  end
 
   def new
   end
@@ -19,8 +22,7 @@ class ConversationsController < ApplicationController
   end
  
   def show
- 
-    @receipts = conversation.receipts_for(current_user)
+    @receipts = conversation.receipts_for(conversation)
     # mark conversation as read
     conversation.mark_as_read(current_user)
   end

@@ -1,5 +1,6 @@
 
-<% @liked.each do |post| %>
+<% @posts.each do |post| %>
+ <% if @job.liked== true %> 
 	<div class="post_wrapper">
 		<%if post.user.name == current_user.name %>
 			<h2 class="user"> Me </h2>
@@ -32,3 +33,4 @@
 	</div>
 
 <% end %>
+<% end %> 
