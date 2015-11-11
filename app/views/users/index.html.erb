@@ -12,7 +12,7 @@
 <% @users.each do |user| %>
 	<% if user.role =="student" %>
 
-		<table style="height: 8em; " class="post_wrapper">
+		<table style="height: 8em; " id="table_id" class="post_wrapper">
 			<td style="display:none">
 				<% if user.image.url != nil %>
 				<h2 class="image" style="margin:5%; display:none"><%= image_tag user.image.url(:small) %></h2>
@@ -32,11 +32,7 @@
 
 		<td>
 			<h5 class ="user">
-				<%= user.school %>
-			</h5>
-
-			<h5 class ="user">
-					<%= user.major %>
+				<%= user.major %>  <%= user.gradyear %>
 				</h5>
 				
 		</td>
