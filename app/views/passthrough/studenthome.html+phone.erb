@@ -1,11 +1,13 @@
+<div style="height: 200px"> </div>
 
 
+<div id="home_phone"> 
 <% if current_user.role=="student" %> 
     <div style="height: 10%" class="page-breadcrumb">
     <button><a href="/users.html">Network</a> </button> <br />
     <button><a href="/mailbox/inbox.html"> Inbox</a></button> <br />
     <button><a href="/posts.html">All Posts</span></button> <br />
-
+ 
 
 <% elsif current_user.role=="company" %> 
     
@@ -25,7 +27,7 @@
                     </div>
                 </div>
             </div>
-      
+      </div> 
 
 
         <!-- End Intro Section -->
