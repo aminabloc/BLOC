@@ -1,0 +1,32 @@
+
+
+<% if current_user.role=="student" %> 
+    <div style="height: 10%" class="page-breadcrumb">
+    <button><a href="/users.html">Network</a> </button> <br />
+    <button><a href="/mailbox/inbox.html"> Inbox</a></button> <br />
+    <button><a href="/posts.html">All Posts</span></button> <br />
+
+
+<% elsif current_user.role=="company" %> 
+    
+        <%= form_tag(users_path, :method  => "get") do %> 
+            <%= text_field_tag :search, params[:search], placeholder: "Search Network" , class: "search_users" %>
+
+         <% end %>
+        <%= yield %>
+    <div style="height: 10%" class="page-breadcrumb">
+    <button><a href="/mailbox/inbox.html"> Inbox</a> <br />
+    <button><a href="/myjobs.html">My Jobs</span></button> <br />
+                   
+  
+ 
+
+                    <% end %> 
+                    </div>
+                </div>
+            </div>
+      
+
+
+        <!-- End Intro Section -->
+
