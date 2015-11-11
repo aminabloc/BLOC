@@ -1,47 +1,46 @@
 <div style="height:100px"> </div>
 <% if @user.role=="student" %> 
 
-<div class="post_wrapper" style="padding: 70px">
+<div class="post_wrapper" style="padding: 12%">
 <table>
 	<td>
-	<h2 >
+	<h2>
 			<% if @user.image.url == nil %>
 			<div> </div>
 			<% else %> 
-			<%= image_tag @user.image.url(:small)%>
+			<div style="display: none"><%= image_tag @user.image.url(:small)%>
+			</div>
 
 			<% end %> 
-		</p>
 	<h2 >
 		</td>
 
 	<td>
 			<h2> <%= @user.name %> </h3>
-			<h3> Graduation Year </h3>
+			<h4> Graduation Year </h4>
 				<p> <%= @user.gradyear %> </p>
-			<h3> College/University </h3>
+			<h4> College/University </h4>
 				<p><%= @user.school %></p>
 			
 	</td> 
 </table> 
-<h3> Major </h3>
+<h4> Major </h4>
 <p><%= @user.major %></p>
-g
-<h3> Organizations </h3>
+<h4> Campus Organizations </h4>
 <p><%= @user.orgs %></p>
 
-<h3> Portfolio Links </h3>
+<h4> Portfolio Links </h4>
 <p><%= @user.links %></p>
 
-<h3> Three Skills I Am Learning </h3>
+<h4> Three Skills I Am Learning </h4>
 <p><%= @user.threeskills %></p>
 	
-<h3> Cities I would Like to Work In </h3>
+<h4> Cities I would Like to Work In </h4>
 <p><%= @user.geo %></p>
 
-
-<h3> <%= link_to "Download Resume" , @user.resume.url %> </h3>
-	
+<% if current_user.role=="company" %> 
+<h4> <%= link_to "View Resume" , @user.resume.url %> </h4>
+	<%end %>
 </div> 
 
 <%elsif @user.role=="company" %> 
@@ -49,20 +48,22 @@ g
 	<table>
 <td>
 	<h3 >
+		<div style="display:none">
 			<% if @user.image.url != nil %>
 			<%= image_tag @user.image.url(:small)%>
 			<% else %> 
 			
 				<% end %> 
-		</p>
+			</div>
+	
 	<h3 >
 		</td>
 
 	<td>
 			<h2> <%= @user.company %> </h2>
-			<h3> Locations </h3>
+			<h4> Locations </h4>
 				<p><%= @user.geo %></p>
-			<h3> Mission </h3>
+			<h4> Mission </h4>
 				<p><%= @user.mission %></p>
 			
 	</td> 
