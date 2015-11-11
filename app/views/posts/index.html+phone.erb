@@ -1,0 +1,48 @@
+ <div style="background-color: #F5F5F5; height: 55px;"> </div> 
+
+ <%= form_tag(posts_path, :method => "get") do %>
+ <div class="post_wrapper" style= "position:fixed; width: 65.5%;background: white;" >
+      <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+      <button style="display:none" type="submit "> Search </button>
+</div>
+  <% end %>
+  <%= yield %>
+
+<div id="spacer"> </div>
+<% @posts.each do |post| %>
+	<div class="post_wrapper_phone">
+		<%if post.user.name == current_user.name %>
+			<h2 class="user"> Me </h2>
+			<% else %>
+				<h2 class ="user"><%= link_to post.user.name , post.user %>
+		<%end %>
+		<table id="table_id" style= "width: 800px; margin: 0px;" > 
+		<td style="width: 150px"> 
+			<div class="image"><%= link_to (image_tag post.user.image.url(:small)),post.user %></div>
+		</td>
+
+		<td style="width: 90%">
+		<h2 class="title"><%= link_to post.title, post %></h2>
+		<h2 class="body"><%= linkify_hashtags(post.body) %></h2>
+		</td> 
+		<td style="width: 10em; height: 10em">
+		<h2 class="image"><%= link_to (image_tag post.image.url(:medium)),post %></h2>
+				<% if current_user.likes?(post) %> 
+				<button> <%= link_to 'unlike', likes_path(post) %></button>
+				<% else %> 
+				<button> <%= link_to 'like', likes_path(post) %></button>
+					<% end %> 
+		</td>
+	
+   		
+		<p class="data"><%= post.created_at.strftime("%B, %d, %Y") %></p>
+	</table>
+
+
+
+	
+	</div>
+
+<% end %>
+
+
