@@ -11,8 +11,7 @@ class AddMoreDetailsToUsers < ActiveRecord::Migration
   	add_column :users, :industry, :text
   	add_column :users, :statement, :string
   	add_column :users, :title, :string 
-  	add_column :users, :testimonial_one, :text
-  	add_column :users, :testimonial_two, :text
-  	add_column :users, :testimonial_three, :text
+  	add_column :users, :resumelink, :string
+
   end
 end

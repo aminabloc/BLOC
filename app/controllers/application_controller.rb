@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) << :links
     devise_parameter_sanitizer.for(:account_update) << :threeskills
     devise_parameter_sanitizer.for(:account_update) << :phone
-    devise_parameter_sanitizer.for(:account_update) << :testimonial_one
+    devise_parameter_sanitizer.for(:account_update) << :resumelink
     devise_parameter_sanitizer.for(:account_update) << :geo
     devise_parameter_sanitizer.for(:account_update) << :hometown
     devise_parameter_sanitizer.for(:account_update) << :company
