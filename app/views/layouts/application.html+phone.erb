@@ -51,47 +51,6 @@
 	</div>
 </div>
 
-<div id="sidebar" style="float:left">
-	<div id="spacer"> </div>
-		<div id="spacer"> </div>
-
-		<div "side-menu cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right">
-		<ul>
-			<li class="bloc" style="color:white; font-size: 2em; padding: 1em 0em"> BLOC </li>
-			<li><%= link_to "Bloc", root_path %></li>
-			<li><%= link_to "About Us ", about_path %></li>
-			<li><a href="mailto:info@ourbloc.co">Contact US</a></li>
-			<% if user_signed_in? %>
-				<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-			<% end %>
-		</ul>
-		<% if !user_signed_in? %>
-			<p class="sign_in">Admin Login</p>
-		<% end %>
-	</div>
-</div>
-
-<div class="right-bar"  style="display: none"> 
-	<ul> <img id="logo-right" src="http://www.ourbloc.co/uploads/2/4/0/1/24014742/9544735.png?43" atl="Bloc Logo">
-	</ul>
-		<li ><%= link_to "BLOC", root_path %></li> 
-		<li> </li>
-		
-
-	
-		<li> <%= link_to "#Achieve", hashtag_path("achieve") %> </li>
-		<li> <%= link_to "#Connect", hashtag_path("connect") %> </li>
-		<li> <%= link_to "#Engage", hashtag_path("engage") %> </li>
-
-
-
-
-
-
-	<ul> 
-</div>
-
-
 
 	<div id="main_content">
 		
