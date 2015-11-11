@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise', '~> 3.4.1'
 gem 'paperclip', '~> 4.3.0'
-gem 'aws-sdk'
+gem 'aws-sdk', '~> 1.6'
 
 
 gem 'bootstrap-sass', '~> 3.2.0.2'

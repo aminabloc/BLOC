@@ -44,4 +44,13 @@ Rails.application.configure do
   # need for image stick
   Paperclip.options[:command_path] = "/usr/local/bin/"
 
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['blocuploads'],
+    :access_key_id => ENV['AKIAIHS7CM6MWRYOYNDA'],
+    :secret_access_key => ENV['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']
+  }
+}
+
 end
