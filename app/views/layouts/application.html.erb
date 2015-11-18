@@ -66,6 +66,7 @@
 			<li class="bloc" style="color:white; font-size: 2em; padding: 1em 0em"> BLOC </li>
 			<li><%= link_to "Bloc", root_path %></li>
 			<li><%= link_to "Resources ", contents_path %></li>
+			<li><%= link_to "Edit Profile ", edit_user_registration_path %></li>
 			<li><a href="mailto:info@ourbloc.co">Contact US</a></li>
 			<% if user_signed_in? %>
 				<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
@@ -113,11 +114,8 @@
 
 
 		<% if user_signed_in? %>
-			<button class="button" style="float:right; text-transform:uppercase"><%= link_to "Logout", destroy_user_session_path, method: :delete %></button>
-
-			<button class="button" id="hide" style="float:right; text-transform:uppercase"><%= link_to "Edit Profile", edit_user_registration_path %></button>
-	      
-	        
+			
+	     
 	        
 			<button class="button" id="hide" style="float:right; text-transform:uppercase"><%= link_to "Network", users_path %></button>
 			
