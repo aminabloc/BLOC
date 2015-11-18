@@ -7,9 +7,9 @@ class PostsController < ApplicationController
 		     if params[:search]
 		     	@posts = Post.search(params[:search]) 
 		      elsif params[:hashtag]
-		        @posts = Post.tagged_with(params[:hashtag]).order('created_at DESC')
+		        @posts = Post.tagged_with(params[:hashtag]).order(created_at: :desc)
 		      else
- 				@posts = Post.all.includes(:comments)
+ 				@posts = Post.all.includes(:comments).order(created_at: :desc)
 
       end
     end
