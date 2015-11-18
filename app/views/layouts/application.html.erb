@@ -40,7 +40,7 @@
 		<ul>
 			<li class="bloc" style="color:white; font-size: 1.5em; padding: 1em 0em"> BLOC </li>
 			<li><%= link_to "Bloc", root_path %></li>
-			<li><%= link_to "About", about_path %></li>
+			<li><%= link_to "Resources", contents_path %></li>
 		</ul>
 
 
@@ -124,7 +124,11 @@
 
 			<%if current_user.role=="student" %>
 			<button class="button" style="float:right; text-transform:uppercase"><%= link_to "All Posts", posts_path %></li> 
+
 			<button class="button" id="hide" style=" float:right; text-transform:uppercase"><%= link_to "New Post", new_post_path %></button>
+			<%end %>
+
+			<button class="button" id="hide" style=" float:right; text-transform:uppercase"><%= link_to "Resources", contents_path %></button>
 			<%end %>
 
 			<% if current_user.role=="company" %> 

@@ -3,7 +3,7 @@
  <%= form_tag(posts_path, :method => "get") do %>
  <div class="post_wrapper" style= "position:fixed; width: 65.5%;background: white;" >
       <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-      <button style="display:none" type="submit "> Search </button>
+      <% link_to 'New Post', new_post_path %>
 </div>
   <% end %>
   <%= yield %>

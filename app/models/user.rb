@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
      
   has_many :posts  
   has_many :jobs 
+  has_many :contents
 
 
   #socialization gem 

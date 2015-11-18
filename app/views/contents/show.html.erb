@@ -1,0 +1,18 @@
+<p id="notice" ><%= notice %></p>
+
+<div style="padding:10%"> 
+<p>
+  <strong>Title:</strong>
+  <%= @content.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @content.body %>
+</p>
+
+<% if current_user.role =="admin" or current_user.role=="fellow" %> 
+<%= link_to 'Edit', edit_content_path(@content) %> 
+<% end %> 
+<%= link_to 'Back', contents_path %>
+</div>
