@@ -11,7 +11,7 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="radio-format">
+  <div class="radio-format" style="color:black">
      <%= f.label "Student" %><span></span>
     <%= f.radio_button :role, 'student' , class: "toggle-student"%> <span></span>
      <%= f.label "Company" %>
@@ -19,13 +19,13 @@
   </div>
 
 
-  <div class="form-group">
+  <div class="form-group" style="color:black">
     <%= f.label :name %> <br />
     <%= f.text_field :name, class: "form-control" %>
   </div>
 
 <!-- student login on radio button click-->
-<div id= "student-login">
+<div id= "student-login" style="color:black">
   <div class="field">
     <%= f.label :school %><br />
     <%= f.text_field :school, class: "form-control" %>
@@ -33,7 +33,7 @@
 </div> 
 
 <!-- student login on radio button click-->
-<div id= "company-login" style= "display: none">
+<div id= "company-login" style= "display: none;color:black">
   <div class="field">
     <%= f.label :company %><br />
     <%= f.text_field :company, class: "form-control" %>
@@ -42,12 +42,12 @@
 
 
 <!-- standard login fields for all accounts !--> 
-<div class="field">
+<div class="field" style="color:black">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
 
-  <div class="field">
+  <div class="field" style="color:black">
     <%= f.label :password %>
     <% if @validatable %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -55,7 +55,7 @@
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
-  <div class="field">
+  <div class="field" style="color:black">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
