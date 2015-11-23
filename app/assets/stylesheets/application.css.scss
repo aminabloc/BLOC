@@ -259,6 +259,7 @@ a {
 	input[type="text"], input[type="email"], input[type="password"], textarea {
 		width: 60%;
 		border: 0;
+		font-color:black;
 		background:white;
 		border-radius: 2px;
 		outline: none;
@@ -316,7 +317,7 @@ td {
 	margin: 0 auto;
 	background-size: cover;
 	input[type="text"] {
-		color: white;
+		color: black;
 	width: 100%;
 	}
 }

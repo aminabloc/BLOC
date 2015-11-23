@@ -596,6 +596,7 @@ label {
 
 .form-field-wrapper {
     margin-bottom: 5px;
+    color: black;
 }
 
     .form-field-wrapper input, .form-field-wrapper textarea, .form-field-wrapper select {
