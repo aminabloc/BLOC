@@ -33,6 +33,7 @@ end
 #home page routes
   get '/home/student', to: 'passthrough#studenthome', as: :student_home
   get '/home/company', to: 'passthrough#companyhome', as: :company_home
+  get '/studentresumes', to: 'users#studentresumes', as: :student_resumes
 
 #index page for all company users
 get '/allcompanies', to: 'users#companies', as: :companies_listed
