@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :videos
   resources :contents
   devise_for :users
   
