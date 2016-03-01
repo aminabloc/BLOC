@@ -45,20 +45,9 @@ Rails.application.configure do
   Paperclip.options[:command_path] = "/usr/local/bin/"
 
   #email alerts for forgotten passwords
-  config.action_mailer.raise_delivery_errors = true
-  
-  config.action_mailer.delivery_method = :smtp
 
-config.action_mailer.smtp_settings = {
-address: “smtp.gmail.com”,
-port: 587,
-domain: ENV[“ourbloc.co”],
-authentication: “plain”,
-enable_starttls_auto: true,
-user_name: ENV[“ayamusah213”],
-password: ENV[“minabina213*”]
-}
-
-
+config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {:address => "localhost", :port => 1025}
 
 end

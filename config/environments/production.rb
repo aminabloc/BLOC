@@ -99,12 +99,9 @@ config.action_mailer.raise_delivery_errors = false
 config.action_mailer.default :charset => "utf-8"
 
 config.action_mailer.smtp_settings = {
-address: "smtp.gmail.com",
-port: 587,
-domain: ENV["ourbloc.co"],
-authentication: "plain",
-enable_starttls_auto: true,
-user_name: ENV["ayamusah213"],
-password: ENV["minabina213*"]
+  :address => "info@ourbloc.co",
+  :port    => 25,
+  :domain  => 'ourbloc.co'
 }
+
 end
