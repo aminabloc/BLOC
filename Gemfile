@@ -26,6 +26,8 @@ gem 'devise', '~> 3.4.1'
 gem 'paperclip', '~> 4.3.0'
 gem 'aws-sdk', '~> 1.6'
 
+#track views and events
+gem 'ahoy_matey'
 
 gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'mailboxer'

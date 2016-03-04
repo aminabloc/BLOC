@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
 //= require jquery.turbolinks
+//= require ahoy
 
 
 //$(document).ready(function() {
