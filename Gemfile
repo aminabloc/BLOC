@@ -23,9 +23,12 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise', '~> 3.4.1'
+
 gem 'paperclip', '~> 4.3.0'
 gem 'aws-sdk', '~> 1.6'
 
+#view tracking gem 
+gem 'ahoy_matey'
 
 gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'mailboxer'
