@@ -17,18 +17,23 @@
 @import "bootstrap";
 @import "jquery-ui";
 @import "style";
-@import "font-awesome";
 @import "pages";
 
 
 
  html, body {
-	font-family: 'Actor', sans-serif;
+	font-family: 'Lato';
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 500;
+	font-family: 'Lato';
 	text-transform: uppercase;
+}
+
+title {
+	font-weight: bold;
+	font: "Lato";
 }
 
 a {
@@ -200,13 +205,13 @@ a {
 			line-height: 1.2em;
 			text-transform: none;
 			width: 100%;
-			font-family: "Raleway";
+			font-family: "Lato";
 		}
 
 		.date_and_author {
 			color: #9eafba;
 			margin: 0em 0 2em 0;
-			font-family: "Raleway";
+			font-family: "Lato";
 			font-weight: 400;
 		}
 		#comments {
@@ -275,7 +280,7 @@ a {
 		min-height: 180px;
 	}
 	input[type="placeholder"] {
-		font-family: "Raleway";
+		font-family: "Lato";
 		font-weight: 600px;
 	}
 	input[type="submit"] {

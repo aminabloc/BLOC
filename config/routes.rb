@@ -63,5 +63,14 @@ get '/allcompanies', to: 'users#companies', as: :companies_listed
       post :untrash
     end
   end
+  
+  #api
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: [:index, :create, :show, :update, :destroy]
+      resources :posts, only: [:index, :create, :show, :update, :destroy]
+      resources :posts, only: [:index,  :show ]
+    end
+  end
 
 end
