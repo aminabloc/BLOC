@@ -8,6 +8,8 @@
 	<%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
   <%= favicon_link_tag 'favicon.ico' %>
 
+ 
+          
   <%= csrf_meta_tags %>
 
 	<script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -112,22 +114,21 @@
 			</div> <!-- end nav collapse-->
 
 
-			<div><%= image_tag 'bloclogovert.jpg'  %></p> 
+			<div><%= link_to image_tag('bloclogovert.jpg') , root_path %></p> 
 
 
 		<% if user_signed_in? %>
 			
 	     
 	        
-			<button class="button" id="hide" style="float:right; text-transform:uppercase"><%= link_to "Network", users_path %></button>
+			<button class="button" id="hide" style="float:right; text-transform:uppercase"><%= link_to image_tag("winning-project.png"), users_path %></button>
 			
 
 			<%if current_user.role=="student" %>
+			<button class="button" id="hide" style=" float:right; text-transform:uppercase"><%= link_to image_tag("edit-pencil.png"), new_post_path %></button>
 			<button class="button" style="float:right; text-transform:uppercase"><%= link_to "All Posts", posts_path %></li> 
 
-			<button class="button" id="hide" style=" float:right; text-transform:uppercase"><%= link_to "New Post", new_post_path %></button>
-		 
-
+		
 			<button class="button" id="hide" style=" float:right; text-transform:uppercase"><%= link_to "Resources", contents_path %></button>
 			<%end %>
 

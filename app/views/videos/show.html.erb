@@ -1,3 +1,10 @@
+<div style="height: 100px"> </div>
+<!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+
 <p id="notice"><%= notice %></p>
 
 <div class="row">
@@ -8,35 +15,26 @@
 			<% end %>			
     </div>
 	</div>
-	<div class="col m9">
-		<div class="card blue-grey darken-1">
+	<iframe class="col m6" src="//www.youtube.com/embed/<%= @video.wistia %>"></iframe>  
+	<div class="col m6">
+		<div class="card blue-grey" style"position: absolute; width:50%">
       <div class="card-image">
         <div id="wistia_<%= @video.wistia %>" ></div>  
       </div>
       
       <div class="card-content white-text">
-        <button class="btn btn-primary" onclick="setPlaySpeed(0.75)">0.75x</button>
-        <button class="btn btn-primary" onclick="setPlaySpeed(1)">1x</button>
-        <button class="btn btn-primary" onclick="setPlaySpeed(1.25)">1.25x</button>
-        <button class="btn btn-primary" onclick="setPlaySpeed(1.5)">1.5x</button>
-        <button class="btn btn-primary" onclick="setPlaySpeed(2)">2x</button>
-        <br/>
+        
         <span class="card-title"><%= @video.title %></span>
         <p><%= @video.description %></p>
       </div>
-      
+      <div class="card-action">
+        <%= link_to "Previous", @prev_video if !@prev_video.nil? %>
+        <span class="right">
+          <%= link_to "Next", @next_video if !@next_video.nil? %>
+        </span>	
+      </div>
     </div>
 	</div>
 </div>	
 
-<script src="http://fast.wistia.net/static/E-v1.js"></script>
-<script>
-  wistiaEmbed = Wistia.embed("<%= @video.wistia %>", {
-    videoQuality: "hd-only",
-    videoFoam: true
-  });
-  function setPlaySpeed(speed) {
-    wistiaEmbed.playbackRate(speed);
-  }
-</script>
 

@@ -34,6 +34,7 @@ h1, h2, h3, h4, h5, h6 {
 title {
 	font-weight: bold;
 	font: "Lato";
+
 }
 
 a {
@@ -161,8 +162,11 @@ a {
 	}
 	.post_wrapper {
 		padding: .5em 4em;
-		width: 80%;
-		border: 1em solid #F5F5F5;
+		position:absolute;
+		left:18%;
+		right: 18%;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	
 		.title {
 			margin: 0;
 			font-size: 1.5em;
