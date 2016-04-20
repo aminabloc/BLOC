@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require_tree .
 //= require jquery.turbolinks
+//= require jquery.avgrund.min
 
 
 //$(document).ready(function() {
@@ -39,3 +40,14 @@ $(document).ready(function() {
        $('#company-login').show();
     });
 });
+
+ $('.background-img').avgrund({
+        	width: 380, // max is 640px
+        	height: 280, // max is 350px
+        	showClose: true, // switch to 'true' for enabling close button
+        	showCloseText: '', // type your text for close button
+        	closeByEscape: true, // enables closing popup by 'Esc'..
+        	closeByDocument: true, // ..and by clicking document itself
+        	onBlurContainer: '', // enables blur filter for specified block
+        	openOnEvent: false, // set to 'false' to init on load
+        });

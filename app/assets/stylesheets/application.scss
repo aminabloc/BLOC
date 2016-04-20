@@ -16,9 +16,9 @@
 
 @import "bootstrap";
 @import "jquery-ui";
-@import "style";
-@import "pages";
 
+@import "pages";
+@import "avgrund.css";
 
 
  html, body {
@@ -162,9 +162,8 @@ a {
 	}
 	.post_wrapper {
 		padding: .5em 4em;
-		position:absolute;
-		left:18%;
-		right: 18%;
+		left: 18% !important;
+		width: 75% !important;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	
 		.title {
@@ -416,4 +415,15 @@ td {
 
 .user_index_table {
 	color: #D4AF37;
+}
+
+#error_explanation{
+	background-color: black;
+}
+
+.topbutton { 
+	font-family: "Lato" !important;
+	padding: 0 1% 2% 1% !important;
+	top: -1% !important;
+	margin-bottom: 2%;
 }

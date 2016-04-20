@@ -65,12 +65,12 @@ get '/allcompanies', to: 'users#companies', as: :companies_listed
   end
   
   #api
-  namespace :api do
-    namespace :v1 do
+  namespace :api , defaults: { format: :json } , 
+    constraints: { subdomain: 'api' }, path: '/'  do
       resources :users, only: [:index, :create, :show, :update, :destroy]
       resources :posts, only: [:index, :create, :show, :update, :destroy]
-      resources :posts, only: [:index,  :show ]
+      resources :jobs, only: [:index,  :show ]
     end
-  end
+  
 
 end

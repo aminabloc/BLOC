@@ -6,6 +6,7 @@
   <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Actor:400,700' %>
     <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Lato:400,700' %>
 	<%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
+
   <%= favicon_link_tag 'favicon.ico' %>
 
  
@@ -13,7 +14,8 @@
   <%= csrf_meta_tags %>
 
 	<script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-  
+  	<script type="text/javascript"  src="//code.jquery.com/avgrund.min.js"></script>
+
 	<!-- DataTables -->
 	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.9/js/jquery.dataTables.js"></script>	
 </head>
@@ -28,8 +30,6 @@
 
 
         
-          
-        <!-- END FOOTER -->
 
         <!-- Scroll Top -->
         <a class="scroll-top">
@@ -80,24 +80,13 @@
 	</div>
 </div>
 
-<div class="right-bar"> 
-	<ul> <img id="logo-right" src="http://www.ourbloc.co/uploads/2/4/0/1/24014742/9544735.png?43" atl="Bloc Logo">
-	</ul>
-		<li ><%= link_to "BLOC", root_path %></li> 
-		<li> </li>
-		
-
+<div style="position:absolute; top:0%" class="right-bar"> 
 	
 		<li> <%= link_to "#Plan", hashtag_path("plan") %> </li>
 		<li> <%= link_to "#Prep", hashtag_path("prep") %> </li>
 		<li> <%= link_to "#Apply", hashtag_path("apply") %> </li>
+		
 
-
-
-
-
-
-	<ul> 
 </div>
 
 
@@ -118,31 +107,31 @@
 		<% if user_signed_in? %>
 			
 	     
-	        
-			<button class="button" id="hide" style="float:right; text-transform:uppercase"><%= link_to image_tag("winning-project.png"), users_path %></button>
+	       
+			<div class="topbutton" id="hide" style="float:right; text-transform:uppercase"><%= link_to image_tag("winning-project.png"), users_path %></div>
 			
 
 			<%if current_user.role=="student" %>
-			<button class="button" id="hide" style=" float:right; text-transform:uppercase"><%= link_to image_tag("edit-pencil.png"), new_post_path %></button>
-			<button class="button" style="float:right; text-transform:uppercase"><%= link_to "All Posts", posts_path %></li> 
+			<div  id="hide" style=" float:right; text-transform:uppercase"><%= link_to image_tag("edit-pencil.png"), new_post_path %></div>
+			<div class="topbutton" style="float:right; text-transform:uppercase"><%= link_to "All Posts", posts_path %></div> 
 
 		
-			<button class="button" id="hide" style=" float:right; text-transform:uppercase"><%= link_to "Resources", contents_path %></button>
+			<div class="topbutton" id="hide" style=" float:right; text-transform:uppercase"><%= link_to "Resources", contents_path %></div>
 			<%end %>
 
 			<% if current_user.role=="company" %> 
-			<button class="button" style="float:right; text-transform:uppercase"><%= link_to "New Job", new_job_path %></li> 
-			<button class="button" style="float:right; text-transform:uppercase"><%= link_to "My Jobs", myjobs_path %></li> 
+			<div  class="topbutton" style="float:right; text-transform:uppercase"><%= link_to "New Job", new_job_path %></div> 
+			<div  class="topbutton" style="float:right; text-transform:uppercase"><%= link_to "My Jobs", myjobs_path %></div> 
 				<%end %> 
 
-			<button class="button" style="float:right; text-transform:uppercase"><%= link_to "All Jobs", jobs_path %></li> 
+			<div  class="topbutton" style="float:right; text-transform:uppercase"><%= link_to "All Jobs", jobs_path %></div> 
 
 
 			
 
 
 
-			<button class="button" id="hide" style="float:right; text-transform:uppercase"><%= link_to "Inbox", mailbox_inbox_path %></button>
+			<div  class="topbutton" id="hide" style="float:right; text-transform:uppercase"><%= link_to "Inbox", mailbox_inbox_path %></div>
 	        	<!-- unread msg counter -->
 	        	<span class="label label-danger pull-right"><%=unread_messages_count%></span>
 	    	</div>

@@ -10,9 +10,9 @@
   <i class="mdi-content-add"></i>
 <% end %>
 
-<ul class="collapsible" data-collapsible="accordion">
+<ul class="collapsible" data-collapsible="accordion" style="width: 75% !important;">
   <% @videos.each do |video| %>
-    <li>
+    <li >
       <div class="collapsible-header">
         <i class="mdi-av-my-library-books"></i>
         <%= link_to video.title, video %>

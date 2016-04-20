@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160229191445) do
+ActiveRecord::Schema.define(version: 20160321194837) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "name"
@@ -190,6 +190,7 @@ ActiveRecord::Schema.define(version: 20160229191445) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "liked"
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
@@ -254,6 +255,10 @@ ActiveRecord::Schema.define(version: 20160229191445) do
     t.integer  "resume_file_size"
     t.datetime "resume_updated_at"
     t.string   "resumelink"
+    t.string   "bloc1"
+    t.string   "bloc2"
+    t.string   "bloc3"
+    t.string   "bloc4"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

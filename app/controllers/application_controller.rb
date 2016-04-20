@@ -26,6 +26,7 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
     devise_parameter_sanitizer.for(:sign_up) << :role
+    
     devise_parameter_sanitizer.for(:account_update) << :school
     devise_parameter_sanitizer.for(:account_update) << :major
     devise_parameter_sanitizer.for(:account_update) << :experience
@@ -47,6 +48,12 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) << :title
     devise_parameter_sanitizer.for(:account_update) << :role
     devise_parameter_sanitizer.for(:account_update) << :resume
+    
+    devise_parameter_sanitizer.for(:account_update) << :bloc1
+    devise_parameter_sanitizer.for(:account_update) << :bloc2
+    devise_parameter_sanitizer.for(:account_update) << :bloc3
+    devise_parameter_sanitizer.for(:account_update) << :bloc4
+
   end
 
 def resource_name

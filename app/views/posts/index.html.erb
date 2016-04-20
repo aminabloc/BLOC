@@ -10,6 +10,7 @@
 
 
 <div id="spacer"> </div>
+
 <% @posts.each do |post| %>
 	<div class="post_wrapper">
 		<%if post.user.name == current_user.name %>
@@ -17,32 +18,30 @@
 			<% else %>
 				<h2 class ="user"><%= link_to post.user.name , post.user %>
 		<%end %>
-		<table id="table_id" style= "width: 800px; margin: 0px;" > 
-		<td style="width: 150px"> 
+		<table id="table_id" > 
+		<td style="width: 10%"> 
 		</td>
 
-		<td style="width: 60%">
+		<td style="width: 50% !important">
 		<h2 class="title"><%= link_to post.title, post %></h2>
 		<h2 class="body"><%= linkify_hashtags(post.body) %></h2>
 		</td> 
 		<td style="width: 10%; height: 10em">
 		<h2 class="image"><%= link_to (image_tag post.image.url(:medium)),post %></h2>
-				<% if current_user.likes?(post) %> 
-				<button> <%= link_to 'unlike', likes_path(post) %></button>
-				<% else %> 
-				<button> <%= link_to 'like', likes_path(post) %></button>
-					<% end %> 
-		</td>
+		
+		<% if post.liked = false %> 
+		<button id="post_like"> Like </button>
+		<% else %> 
+		<button id="post_like"> Unlike </button>
+		<% end %> 
 	
-   		
+
 		<p class="data"><%= post.created_at.strftime("%B, %d, %Y") %></p>
 	</table>
-
-
-
-	
 	</div>
 
+	
+</script>
 <% end %>
 
 
