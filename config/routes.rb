@@ -1,4 +1,8 @@
+require 'api_constraints'
+
 Rails.application.routes.draw do
+  
+  
   resources :videos
   resources :contents
   devise_for :users
@@ -64,13 +68,12 @@ get '/allcompanies', to: 'users#companies', as: :companies_listed
     end
   end
   
-  #api
-  namespace :api , defaults: { format: :json } , 
-    constraints: { subdomain: 'api' }, path: '/'  do
-      resources :users, only: [:index, :create, :show, :update, :destroy]
-      resources :posts, only: [:index, :create, :show, :update, :destroy]
-      resources :jobs, only: [:index,  :show ]
+   # Api definition
+  namespace :api, defaults: { format: :json },
+                              constraints: { subdomain: 'api' }, path: '/'  do
+    scope module: :v1,
+              constraints: ApiConstraints.new(version: 1, default: true) do
+      # We are going to list our resources here
     end
-  
-
+  end
 end
